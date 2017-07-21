@@ -1,0 +1,283 @@
+/* RATE PLANS */
+
+.rateplanChoose {
+    height: auto;
+    margin-top: 15px;
+    background-size: cover;
+    padding: 32px 105px 32px 190px;
+    background: #16212d url(../../../img/BuyCreditsPage/credits_bg.jpg) no-repeat center top;
+    box-sizing: border-box;
+}
+.rateplans {
+    width: 450px;
+		
+    .rateplan {
+    	width: 100%;
+    	height: 48px;
+    	color: #ffffff;
+    	cursor: pointer;
+    	position: relative;
+    	margin-bottom: 5px;
+    	border: 1px solid #fff;
+    	padding: 7px 5px 6px 30px;
+    	background: rgba(0, 0, 0, 0.5);
+    	@include border-radius(25px 0 0 25px);
+    	border-right: none;
+    	box-sizing: border-box;
+
+		-webkit-box-orient: horizontal;
+	    -webkit-box-direction: normal;
+	    -webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	    flex-direction: row;
+
+		-webkit-transform: perspective(1px) translateZ(0);
+		transform: perspective(1px) translateZ(0);
+		-webkit-transition-duration: 0.2s;
+		transition-duration: 0.2s;
+		-webkit-transition-property: color, background-color;
+		transition-property: color, background-color;
+		
+		&:last-child {
+			margin-bottom: 0px;
+		}
+
+		.price {
+			width: 130px;
+			color: #8d8e90;
+			font-size: 21px;
+			font-weight: 400;
+			text-align: center;
+			line-height: 21px;
+			font-family: 'PT Sans', sans-serif;
+
+			.priceValue {
+				margin-left: 2px;
+				font-weight: 600;
+				color: #fff;
+				
+				-webkit-transform: perspective(1px) translateZ(0);
+				transform: perspective(1px) translateZ(0);
+				-webkit-transition-duration: 0.2s;
+				transition-duration: 0.2s;
+				-webkit-transition-property: color, background-color;
+				transition-property: color, background-color;
+			}	
+		}
+
+		.credits {
+			width: 154px;
+			font-size: 18px;
+			font-weight: 600;
+			line-height: 14px;
+			font-family: 'PT Sans', sans-serif;
+			
+			.creditsValue {
+				margin-right: 3px;
+			}
+
+			.item-price {
+				font-size: 12px;
+				color: #8d8e90;
+			}
+		}
+
+		.discount {
+			width: 136px;
+			font-size: 18px;	
+			font-weight: 400;
+			line-height: 14px;
+			font-family: 'PT Sans', sans-serif;
+
+			.mini {
+				font-size: 12px;
+			}
+		}
+
+		.label-rateplan {
+			width: 120px;
+			height: 48px;
+			left: -90px;
+			position: absolute;
+			transform: rotate(-28deg);
+			top: 24px;
+			z-index: 10;
+	     	color: #fff;
+	     	box-sizing: border-box;
+		    
+		    &::after {
+				content: "";
+				z-index: 3; 
+				width: 25px;
+				height: 24px;
+				position: absolute;
+				background: $label-default-BGcolor;
+				top: -50%;
+				right: -13px;
+				bottom: -50%;
+				margin: auto;
+				border-right: 1px solid #fff;
+				box-sizing: border-box;
+			}
+
+			&::before {
+				content: '';
+			    width: 14px;
+			    height: 14px;
+			    border: 1px solid #fff;
+			    background: #080c10;
+			    -webkit-border-radius: 25px;
+			    -moz-border-radius: 25px;
+			    -ms-border-radius: 25px;
+			    border-radius: 50%;
+			    position: absolute;
+			    right: -5px;
+			    z-index: 5;
+			    margin: auto;
+			    top: -50%;
+			    bottom: -50%;
+			    box-sizing: border-box;
+			    
+			    -webkit-transform: perspective(1px) translateZ(0);
+				transform: perspective(1px) translateZ(0);
+				-webkit-transition-duration: 0.2s;
+				transition-duration: 0.2s;
+				-webkit-transition-property: color, background-color;
+				transition-property: color, background-color;
+			}
+
+			.info-lbl {
+				width: 98px;
+				height: 48px;
+				font-size: 14px;
+				font-weight: 600;
+				border-right: none;
+				background: $label-default-BGcolor;
+				border: 1.4px solid white;
+				font-family: 'PT Sans', sans-serif;
+    			@include border-radius(10px 0 0 10px);
+    			box-sizing: border-box;
+    			
+    			> div {
+    				font-size: 10px;
+    				width: 100%;
+    				text-align: center;
+					font-weight: 400;
+    			}
+			}
+
+			.before-lbl {
+				position: relative;
+				box-sizing: border-box;
+
+				&::before {
+					content: "";
+					border: 11px solid transparent;
+					border-left: 24px solid $label-default-BGcolor;
+					position: absolute;
+					z-index: 1;
+				    left: -2px;
+				    box-sizing: border-box;
+				}	
+
+				&::after {
+					content: "";
+					border: 12px solid transparent;
+					border-left: 25px solid #fff;
+					position: absolute;
+					z-index: 0;
+					box-sizing: border-box;
+				}
+				&.bottom {
+					&::before {
+						border-left: 24px solid $label-default-BGcolor;
+						bottom: 1;
+					}	
+					&::after {
+						border-left: 25px solid #fff;
+						bottom: 0;
+					}
+				}
+				&.top {
+					&::before {
+						top: 1;
+					}	
+					&::after {
+						top: 0;
+					}
+				}
+			}
+		}
+
+		&:hover {
+			background: #fff;
+			color: #4d4d4d;
+			
+			.label-rateplan::before {
+				background: #c4c4c4;
+				@include box-shadow(inset 0px 1px 3px 3px rgba(0,0,0,.2));
+			}
+			
+			.price .priceValue {
+				color: #4d4d4d;
+			}
+		}
+
+    }
+}
+
+.reteplanDetails {
+	margin: 0;
+	width: 260px;
+	background: #ffffff;
+	@include border-radius(0 25px 25px 0);
+	box-sizing: border-box;
+}
+
+.rateplanChoose,
+.rateplans,
+.rateplans .rateplan,
+.rateplans .rateplan .price,
+.rateplans .rateplan .label-rateplan,
+.rateplans .rateplan .label-rateplan .info-lbl,
+.rateplans .rateplan .credits,
+.rateplans .rateplan .discount {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.rateplanChoose, 
+.rateplans .rateplan .price,
+.rateplans .rateplan .credits,
+.rateplans .rateplan .label-rateplan,
+.rateplans .rateplan .label-rateplan .info-lbl,
+.rateplans .rateplan .discount {
+	-webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.rateplans .rateplan .price,
+.rateplans .rateplan .credits,
+.rateplans .rateplan .label-rateplan,
+.rateplans .rateplan .label-rateplan .info-lbl,
+.rateplans .rateplan .discount {
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.rateplans,
+.rateplans .rateplan .credits,
+.rateplans .rateplan .label-rateplan .info-lbl,
+.rateplans .rateplan .discount {
+	-webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}

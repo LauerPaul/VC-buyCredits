@@ -1,0 +1,24 @@
+{
+  "name": "victoiyaclub.com - buyCreditsPage",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "(Lauer) Uhrynovych Paul <pavel@lauer.com.ua>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "4.0",
+    "jquery": "3.*"
+  },
+  "devDependencies": {
+    "hover": "^2.1.1"
+  }
+}

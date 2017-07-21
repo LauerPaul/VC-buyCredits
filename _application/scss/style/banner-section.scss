@@ -1,0 +1,163 @@
+body{
+	background: gray;
+}
+.removeClass {
+	width: 1024px;
+	background: #fff;
+	padding: 0 12px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	position: relative;
+	overflow: hidden;
+}
+
+//Promo section
+.promo-section-buyPage {
+	overflow: hidden;
+	position: relative;
+	padding: 12px 3px 15px 3px;
+	
+	a {
+		float: left;
+		width: 100%;
+		outline: none;
+		display: block;
+		max-width: 684px;
+		text-decoration: none;
+	}
+
+	.promo-buyPage {
+		width: 100%;
+		height: 220px;
+		display: flex;
+		max-width: 684px;
+		margin-bottom: 15px;
+		box-sizing: border-box;
+		flex-direction: column;
+		justify-content: center;
+		display: -webkit-flex; /* Safari */
+		-webkit-flex-direction: column; /* Safari */
+		-webkit-justify-content: center; /* Safari */
+		background: url(../../../img/BuyCreditsPage/promo_bg.png) center;
+		
+		&.text-center {
+			text-align: center;
+		}
+		.start-text-promo,
+		.second-text-promo {
+			color: $d_blue;
+			text-align: center;
+			font-family: 'Nunito-Black';
+			font-weight: normal;
+			line-height: 48px;
+		}
+
+		.start-text-promo {
+			font-size: 33px;
+		}
+		.second-text-promo {
+			font-size: 42px;
+		}
+		.green-color-promo {
+			color: $d_green;
+		}
+
+		.description-text-promo {
+			color: #767e7d;
+			margin-top: 2px;
+			font-size: 22px;
+			font-weight: 500;
+			text-align: center;
+			font-family: 'Nunito-Regular';
+		}
+	}
+
+	// PomoCode window
+	.promocode-window {
+		float: right;
+		width: 100%;
+		height: 220px;
+		display: flex;
+		padding: 30px;
+		max-width: 285px;
+		margin-bottom: 15px;
+		background: $bg_green;
+		box-sizing: border-box;
+		flex-direction: column;
+		justify-content: center;
+		display: -webkit-flex; /* Safari */
+		-webkit-flex-direction: column; /* Safari */
+		-webkit-justify-content: center; /* Safari */
+		
+		.title-promo {
+			font-size: 18px;
+			color: $d_green;
+			font-weight: bold;
+			line-height: 21px;
+			text-align: center;
+			font-family: 'PT Sans', sans-serif;
+		}
+
+		form {
+			margin: 0px;
+
+			input {
+				width: 100%;
+				height: 34px;
+				display: block;
+				margin-top: 15px;
+				padding: 5px 10px;
+				border-radius: 4px;
+				text-align: center;
+				margin-bottom: 12px;
+				box-sizing: border-box;
+				border: 1px solid #c8dcd9;
+			}
+			.promo-button {
+				width: 100%;
+				margin: 0px;
+				height: 34px;
+				display: block;
+				color: #ffffff;
+				cursor: pointer;
+				font-weight: bold;
+				text-align: center;
+				border-radius: 4px;
+				box-sizing: border-box;
+				border: 1px solid #c8dcd9;
+			    @include transition(all 0.6s);
+				font-family: 'PT Sans', sans-serif;
+			    background-image: linear-gradient(to top,#004ecf 0,#0096e9 100%);
+			    
+			    &:hover {
+			    	background-image: linear-gradient(to top,#0096e9 0,#004ecf 100%);
+			    }
+			}
+		}
+
+		.description-section-promo {
+			color: #000000;
+			font-size: 12px;
+			margin-top: 12px;
+			text-align: center;
+			font-weight: normal;
+			font-family: 'PT Sans', sans-serif;
+			
+			a {
+				float: none;
+				width: auto;
+				outline: none;
+				color: $d_blue;
+				text-align: center;
+				display: inline-block;
+				text-decoration: underline;
+			    @include transition(all 0.2s);
+				
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+
+	}
+}
