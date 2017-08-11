@@ -6,12 +6,16 @@ form(id="credits-table", method="POST")
 			.rateplans
 				
 				// rateplan 
-				.rateplan#activeRateplanClick.wow.flipInX
-					.price.wow.fadeIn(data-wow-delay="0.4s") $
-						span.priceValue 4.88
+				.rateplan#activeRateplanClick.wow.flipInX.activeRateplan
+					.price.wow.fadeIn(data-wow-delay="0.4s") 
+						span.relative
+							span.oldValue
+							|$
+							span.priceValue 4.88
 					.credits.wow.fadeIn(data-wow-delay="0.4s")
 						div
 							span.creditsValue 30
+							span.update
 							|credits
 						.item-price $0.16 for 1 credit
 					.discount.wow.fadeIn(data-wow-delay="0.4s")
@@ -28,11 +32,15 @@ form(id="credits-table", method="POST")
 
 				// rateplan 
 				.rateplan.wow.flipInX(data-wow-delay="0.2s")
-					.price.wow.fadeIn(data-wow-delay="0.6s") $
-						span.priceValue 13
+					.price.wow.fadeIn(data-wow-delay="0.6s") 
+						span.relative
+							span.oldValue
+							|$
+							span.priceValue 13
 					.credits.wow.fadeIn(data-wow-delay="0.6s")
 						div
 							span.creditsValue 40
+							span.update
 							|credits
 						.item-price $0.33 for 1 credit
 					.discount
@@ -44,6 +52,7 @@ form(id="credits-table", method="POST")
 					.credits.wow.fadeIn(data-wow-delay="0.8s")
 						div
 							span.creditsValue 140
+							span.update
 							|credits
 						.item-price $0.32 for 1 credit
 					.discount.wow.fadeIn(data-wow-delay="0.8s")
@@ -54,11 +63,15 @@ form(id="credits-table", method="POST")
 
 				// rateplan 
 				.rateplan.wow.flipInX(data-wow-delay="0.5s")
-					.price.wow.fadeIn(data-wow-delay="0.9s") $
-						span.priceValue 99
+					.price.wow.fadeIn(data-wow-delay="0.9s") 
+						span.relative
+							span.oldValue
+							|$
+							span.priceValue 99
 					.credits.wow.fadeIn(data-wow-delay="0.9s")
 						div
 							span.creditsValue 320
+							span.update
 							|credits
 						.item-price $0.31 for 1 credit
 					.discount.wow.fadeIn(data-wow-delay="0.9s")
@@ -66,29 +79,43 @@ form(id="credits-table", method="POST")
 							span.discountValue 5
 							|%
 						.mini saving
+						.label-rateplan.bonus
+							.info-lbl BONUS $13
+								div ONE-TIME OFFER
+							.before-lbl.top
+							.before-lbl.bottom
 
 				// rateplan 
 				.rateplan.wow.flipInX(data-wow-delay="0.6s")
-					.price.wow.fadeIn(data-wow-delay="1s") $
-						span.priceValue 149
+					.price.wow.fadeIn(data-wow-delay="1s")
+						span.relative
+							span.oldValue
+							|$
+							span.priceValue 149
 					.credits.wow.fadeIn(data-wow-delay="1s")
 						div
-							span.creditsValue 500
+							span.creditsValue 500&nbsp;
+								span.update + 20
 							|credits
-						.item-price $0.30 for 1 credit
+						.item-price.update $0.28 for 1 credit
 					.discount.wow.fadeIn(data-wow-delay="1s")
-						div
-							span.discountValue 10
+						div.update
+							span.oldValue 10%
+							span.discountValue 12
 							|%
 						.mini saving
 
 				// rateplan 
 				.rateplan.wow.flipInX(data-wow-delay="0.7s")
-					.price.wow.fadeIn(data-wow-delay="1.1s") $
-						span.priceValue 219
+					.price.wow.fadeIn(data-wow-delay="1.1s") 
+						span.relative
+							span.oldValue
+							|$
+							span.priceValue 219
 					.credits.wow.fadeIn(data-wow-delay="1.1s")
 						div
 							span.creditsValue 750
+							span.update
 							|credits
 						.item-price $0.29 for 1 credit
 					.discount.wow.fadeIn(data-wow-delay="1.1s")
@@ -96,14 +123,23 @@ form(id="credits-table", method="POST")
 							span.discountValue 15
 							|%
 						.mini saving
+						.label-rateplan.bonus.big
+							.info-lbl BONUS $45
+								div ONE-TIME OFFER
+							.before-lbl.top
+							.before-lbl.bottom
 
 				// rateplan 
 				.rateplan.wow.flipInX(data-wow-delay="0.7s")
-					.price.wow.fadeIn(data-wow-delay="1.1s") $
-						span.priceValue 299
+					.price.wow.fadeIn(data-wow-delay="1.1s") 
+						span.relative
+							span.oldValue
+							|$
+							span.priceValue 299
 					.credits.wow.fadeIn(data-wow-delay="1.1s")
 						div
 							span.creditsValue 1070
+							span.update
 							|credits
 						.item-price $0.28 for 1 credit
 					.discount.wow.fadeIn(data-wow-delay="1.1s")
@@ -114,11 +150,15 @@ form(id="credits-table", method="POST")
 
 				// rateplan 
 				.rateplan.wow.flipInX(data-wow-delay="0.7s")
-					.price.wow.fadeIn(data-wow-delay="1.1s") $
-						span.priceValue 389
+					.price.wow.fadeIn.update(data-wow-delay="1.1s") 
+						span.relative
+							span.oldValue $389
+							|$
+							span.priceValue 350
 					.credits.wow.fadeIn(data-wow-delay="1.1s")
 						div
 							span.creditsValue 1400
+							span.update
 							|credits
 						.item-price $0.28 for 1 credit
 					.discount.wow.fadeIn(data-wow-delay="1.1s")
@@ -129,11 +169,15 @@ form(id="credits-table", method="POST")
 
 				// rateplan 
 				.rateplan.wow.flipInX(data-wow-delay="0.7s")
-					.price.wow.fadeIn(data-wow-delay="1.1s") $
-						span.priceValue 459
+					.price.wow.fadeIn(data-wow-delay="1.1s") 
+						span.relative
+							span.oldValue
+							|$
+							span.priceValue 459
 					.credits.wow.fadeIn(data-wow-delay="1.1s")
 						div
 							span.creditsValue 1700
+							span.update
 							|credits
 						.item-price $0.27 for 1 credit
 					.discount.wow.fadeIn(data-wow-delay="1.1s")
@@ -141,14 +185,23 @@ form(id="credits-table", method="POST")
 							span.discountValue 17
 							|%
 						.mini saving
+						.label-rateplan.recommend
+							.info-lbl WE
+								div RECOMMEND
+							.before-lbl.top
+							.before-lbl.bottom
 
 				// rateplan 
 				.rateplan.wow.flipInX(data-wow-delay="0.7s")
-					.price.wow.fadeIn(data-wow-delay="1.1s") $
-						span.priceValue 919
+					.price.wow.fadeIn(data-wow-delay="1.1s") 
+						span.relative
+							span.oldValue
+							|$
+							span.priceValue 919
 					.credits.wow.fadeIn(data-wow-delay="1.1s")
 						div
 							span.creditsValue 3400
+							span.update
 							|credits
 						.item-price $0.27 for 1 credit
 					.discount.wow.fadeIn(data-wow-delay="1.1s")
@@ -156,7 +209,20 @@ form(id="credits-table", method="POST")
 							span.discountValue 17
 							|%
 						.mini saving
-
-			.reteplanDetails.wow.fadeIn
+						.label-rateplan.profitable
+							.info-lbl THE MOST
+								div PROFITABLE
+							.before-lbl.top
+							.before-lbl.bottom
+			
+			include rateplanDetails
+			
+			.bottomSectionRateplan
+				.titleInfoRateplan 100% Safe Guarantee and Confident Payments
+				div
+					img(src="img/buyCreditsPage/iconsPayment.png", alt="")
+				.pull-right
+					|Powered by&nbsp;
+					a(href="#", target="_blank") MultiCards
 
 // *RATE PLANS* 

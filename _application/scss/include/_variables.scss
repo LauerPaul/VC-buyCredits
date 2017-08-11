@@ -1,5 +1,44 @@
+// FONT VC
+$font-path: "../../../fonts";
+
+$FontNunito_regular: 'Nunito-Regular';
+$FontNunito_black: 'Nunito-Black';
+$FontPTS_ss: 'PT Sans', sans-serif;
+
+$vc-girls: "\e900";
+$vc-messages: "\e901";
+$vc-pht_video-path1: "\e902";
+$vc-pht_video-path2: "\e903";
+$vc-information: "\e904";
+$vc-chat: "\e905";
+$vc-checkOk: "\e906";
+
+//colors
+$white: #ffffff;
 $d_blue:   #19488e;
 $d_green:  #21b7aa;
 $bg_green: #ddf4f1;
 
+// Label rateplan bg color
 $label-default-BGcolor: #ea5d42;
+$label-bonus-BGcolor: #39aa77;
+$label-bonusSecond-BGcolor: #00b296;
+$label-recommend-BGcolor: #51748c;
+$label-profitable-BGcolor: #515589;
+$label-cheapest-BGcolor: #d4a931;
+
+// PROMO BANNER
+$PromoBanner_bg: url(../../../img/BuyCreditsPage/promo_bg.png);
+
+// HIDE BLOCK
+$HideBlock_BG: #ddf4f1;
+$HideBlock_titleColor: #21b7a2;
+$HideBlock_btnHover: #d1e8e5;
+$HideBlock_textColor: #303433;
+
+	//urls
+	$url_caretImg: url(../../../img/caretSprite.png);
+	$url_delimiterImg: url(../../../img/payDelimiter.png);
+
+// Rateplan
+$RatePlan_bg: #16212d url(../../../img/BuyCreditsPage/credits_bg.jpg);

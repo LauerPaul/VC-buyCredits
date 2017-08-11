@@ -3,14 +3,22 @@
 .rateplanChoose {
     height: auto;
     margin-top: 15px;
+    padding: 32px 105px 32px 185px;
+    background: $RatePlan_bg no-repeat center top;
     background-size: cover;
-    padding: 32px 105px 32px 190px;
-    background: #16212d url(../../../img/BuyCreditsPage/credits_bg.jpg) no-repeat center top;
     box-sizing: border-box;
+	-webkit-flex-wrap: wrap!important;
+	-ms-flex-wrap: wrap!important;
+	flex-wrap: wrap!important;
 }
+
 .rateplans {
     width: 450px;
-		
+    
+	.relative {
+		position: relative;
+	}	
+
     .rateplan {
     	width: 100%;
     	height: 48px;
@@ -41,6 +49,29 @@
 		&:last-child {
 			margin-bottom: 0px;
 		}
+		
+		.oldValue {
+			display: none;
+		}
+
+		.update {
+			color: #7DDA1C;
+			position: relative;
+			
+			.oldValue {
+				display: block;
+			    color: #fff;
+			    font-size: 11px;
+			    position: absolute;
+			    right: calc(100% + 3px);
+			    border-bottom: 1px solid rgba(254,254,254,0.5);
+			    line-height: 0;
+			    height: 1px;
+			    top: -50%;
+			    bottom: -50%;
+			    margin: auto;
+			}
+		}
 
 		.price {
 			width: 130px;
@@ -49,7 +80,7 @@
 			font-weight: 400;
 			text-align: center;
 			line-height: 21px;
-			font-family: 'PT Sans', sans-serif;
+			font-family: $FontPTS_ss;
 
 			.priceValue {
 				margin-left: 2px;
@@ -63,6 +94,14 @@
 				-webkit-transition-property: color, background-color;
 				transition-property: color, background-color;
 			}	
+
+			&.update {
+				color: #579814;
+				
+				.priceValue {
+					color: #7DDA1C;
+				}
+			}
 		}
 
 		.credits {
@@ -70,7 +109,7 @@
 			font-size: 18px;
 			font-weight: 600;
 			line-height: 14px;
-			font-family: 'PT Sans', sans-serif;
+			font-family: $FontPTS_ss;
 			
 			.creditsValue {
 				margin-right: 3px;
@@ -78,7 +117,11 @@
 
 			.item-price {
 				font-size: 12px;
-				color: #8d8e90;
+				color: rgba(255,255,255, 0.7);
+				
+				&.update {
+					color: #579814;
+				}
 			}
 		}
 
@@ -87,10 +130,11 @@
 			font-size: 18px;	
 			font-weight: 400;
 			line-height: 14px;
-			font-family: 'PT Sans', sans-serif;
+			font-family: $FontPTS_ss;
 
 			.mini {
 				font-size: 12px;
+				color: rgba(255,255,255, 0.7);
 			}
 		}
 
@@ -154,7 +198,7 @@
 				border-right: none;
 				background: $label-default-BGcolor;
 				border: 1.4px solid white;
-				font-family: 'PT Sans', sans-serif;
+				font-family: $FontPTS_ss;
     			@include border-radius(10px 0 0 10px);
     			box-sizing: border-box;
     			
@@ -191,7 +235,7 @@
 				&.bottom {
 					&::before {
 						border-left: 24px solid $label-default-BGcolor;
-						bottom: 1;
+						bottom: 1px;
 					}	
 					&::after {
 						border-left: 25px solid #fff;
@@ -200,38 +244,151 @@
 				}
 				&.top {
 					&::before {
-						top: 1;
+						top: 1px;
 					}	
 					&::after {
 						top: 0;
 					}
 				}
 			}
-		}
 
+			&.bonus {
+				&::after, .info-lbl {
+					background: $label-bonus-BGcolor;
+				}
+				
+				.before-lbl {
+					&::before {
+						border-left: 24px solid $label-bonus-BGcolor;
+					}	
+					&.bottom {
+						&::before {
+							border-left: 24px solid $label-bonus-BGcolor;
+						}
+					}
+				}
+
+				&.big {
+					&::after, .info-lbl {
+						background: $label-bonusSecond-BGcolor;
+					}
+					
+					.before-lbl {
+						&::before {
+							border-left: 24px solid $label-bonusSecond-BGcolor;
+						}	
+						&.bottom {
+							&::before {
+								border-left: 24px solid $label-bonusSecond-BGcolor;
+							}
+						}
+					}
+				}
+			}
+			
+			&.recommend{
+				&::after, .info-lbl {
+					background: $label-recommend-BGcolor;
+				}
+				
+				.before-lbl {
+					&::before {
+						border-left: 24px solid $label-recommend-BGcolor;
+					}	
+					&.bottom {
+						&::before {
+							border-left: 24px solid $label-recommend-BGcolor;
+						}
+					}
+				}
+			}
+			
+			&.cheapest{
+				&::after, .info-lbl {
+					background: $label-cheapest-BGcolor;
+				}
+				
+				.before-lbl {
+					&::before {
+						border-left: 24px solid $label-cheapest-BGcolor;
+					}	
+					&.bottom {
+						&::before {
+							border-left: 24px solid $label-cheapest-BGcolor;
+						}
+					}
+				}
+			}
+			
+			&.profitable {
+				&::after, .info-lbl {
+					background: $label-profitable-BGcolor;
+				}
+				
+				.before-lbl {
+					&::before {
+						border-left: 24px solid $label-profitable-BGcolor;
+					}	
+					&.bottom {
+						&::before {
+							border-left: 24px solid $label-profitable-BGcolor;
+						}
+					}
+				}
+			}
+
+			&.recommend, 
+			&.profitable {
+				.info-lbl > div {
+					text-transform: uppercase;
+					font-size: 14px;
+				}
+			}
+
+		}
+	
+		&.activeRateplan,
 		&:hover {
 			background: #fff;
 			color: #4d4d4d;
 			
+			.update {
+				color: #5A9614;
+			}
+
+			.oldValue {
+				color: rgba(0,0,0,.54);
+				border-color: rgba(0,0,0,.54);
+			}
+
 			.label-rateplan::before {
 				background: #c4c4c4;
 				@include box-shadow(inset 0px 1px 3px 3px rgba(0,0,0,.2));
 			}
 			
-			.price .priceValue {
-				color: #4d4d4d;
+			.price {
+				.priceValue {
+					color: #4d4d4d;
+				}
+
+				&.update {
+					.priceValue {
+						color: #5A9614;
+					}
+				}
+			}
+
+			.credits .item-price,
+			.discount .mini {
+				color: rgba(0,0,0, 0.54);
+				
+				&.update{
+					color: #5A9614;
+				}
 			}
 		}
 
     }
-}
-
-.reteplanDetails {
-	margin: 0;
-	width: 260px;
-	background: #ffffff;
-	@include border-radius(0 25px 25px 0);
-	box-sizing: border-box;
 }
 
 .rateplanChoose,
@@ -280,4 +437,32 @@
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+}
+
+.bottomSectionRateplan {
+	width: 100%;
+	text-align: right;
+	
+	.titleInfoRateplan {
+		color: #ffffff;
+		font-size: 24px;
+		margin-top: 22px;
+		margin-bottom: 12px;
+		font-family: $FontPTS_ss;
+	}
+
+	.pull-right {
+		margin-top: 12px;
+		font-size: 16px;
+		font-family: $FontPTS_ss;
+		color: rgba(255, 255, 255, 0.54);
+		
+		a {
+			color: #ffffff;
+			
+			&:hover {
+				color: #ffffff !important;
+			}
+		}
+	}
 }

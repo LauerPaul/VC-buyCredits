@@ -6,9 +6,17 @@ front-end dev. Pavel Ugrynovych (Lauer - lauer.com.ua)
 @import "include/_mixin";
 @import "hover";
 
+/* flipClOck */
+@import "style/flipclock";
+/* flipClOck end */
+
 @import "include/font";
+@import "style/styles";
 @import "style/banner-section";
-@import "style/remove";
+@import "style/hideBlock";
 @import "style/ratePlans";
+@import "style/rateplanDetails";
+@import "style/promoAddCretits";
 
 
+// @import "style/remove";

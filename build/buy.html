@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;amp;subset=cyrillic"/>
   <script src="js/buy_credits/jquery.min.js"></script>
   <script src="js/buy_credits/wow.min.js"></script>
+  <script src="js/buy_credits/flipclock.min.js"></script>
   <script src="js/buy_credits/buyCreditsPage.js"></script>
 </head>
 <body>
@@ -16,13 +17,13 @@
             <div class="second-text-promo wow fadeIn" data-wow-delay="0.6s" data-wow-duration="0.8s"><span class="green-color-promo">REAL&nbsp;</span>COMMUNICATION?</div>
             <div class="description-text-promo wow zoomIn" data-wow-delay="1.2s">Choose a rate plan and get your<br/>bonuses and discounts!</div>
           </div></a>
-        <div class="promocode-window wow zoomIn" data-wow-delay="1.2s">
-          <div class="title-promo">If you get a PROMOCODE,<br/>paste it here</div>
-          <form id="promoCode">
-            <input type="text" name="code"/>
-            <button class="promo-button">Submit</button>
-          </form>
-          <div class="description-section-promo">Clicking Submit you agree with the&nbsp;<a href="#">Terms</a></div>
+        <div class="promocode-window wow zoomIn successCode" data-wow-delay="1.2s">
+          <div class="title-promo">Rate plans have been<br/>changed successfully</div>
+          <div class="timer">
+            <div class="titleTimerSection">THE ACTION ENDS IN</div>
+            <div class="clock"></div>
+          </div>
+          <div class="bottomLine"><a href="#">Enter</a>&nbsp;another promocode,<br>or&nbsp;<a href="#">Cancel</a>&nbsp;current promocode</div>
         </div>
       </div>
     </div>
@@ -33,10 +34,10 @@
         <div class="rateplanChoose">
           <div class="rateplans">
             <!-- rateplan -->
-            <div class="rateplan wow flipInX" id="activeRateplanClick">
-              <div class="price wow fadeIn" data-wow-delay="0.4s">$<span class="priceValue">4.88</span></div>
+            <div class="rateplan wow flipInX activeRateplan" id="activeRateplanClick">
+              <div class="price wow fadeIn" data-wow-delay="0.4s"> <span class="relative"><span class="oldValue"></span>$<span class="priceValue">4.88</span></span></div>
               <div class="credits wow fadeIn" data-wow-delay="0.4s">
-                <div><span class="creditsValue">30</span>credits</div>
+                <div><span class="creditsValue">30</span><span class="update"></span>credits</div>
                 <div class="item-price">$0.16 for 1 credit</div>
               </div>
               <div class="discount wow fadeIn" data-wow-delay="0.4s">
@@ -53,9 +54,9 @@
             </div>
             <!-- rateplan -->
             <div class="rateplan wow flipInX" data-wow-delay="0.2s">
-              <div class="price wow fadeIn" data-wow-delay="0.6s">$<span class="priceValue">13</span></div>
+              <div class="price wow fadeIn" data-wow-delay="0.6s"> <span class="relative"><span class="oldValue"></span>$<span class="priceValue">13</span></span></div>
               <div class="credits wow fadeIn" data-wow-delay="0.6s">
-                <div><span class="creditsValue">40</span>credits</div>
+                <div><span class="creditsValue">40</span><span class="update"></span>credits</div>
                 <div class="item-price">$0.33 for 1 credit</div>
               </div>
               <div class="discount"></div>
@@ -64,7 +65,7 @@
             <div class="rateplan wow flipInX" data-wow-delay="0.4s">
               <div class="price wow fadeIn" data-wow-delay="0.8s">$<span class="priceValue">45</span></div>
               <div class="credits wow fadeIn" data-wow-delay="0.8s">
-                <div><span class="creditsValue">140</span>credits</div>
+                <div><span class="creditsValue">140</span><span class="update"></span>credits</div>
                 <div class="item-price">$0.32 for 1 credit</div>
               </div>
               <div class="discount wow fadeIn" data-wow-delay="0.8s">
@@ -74,45 +75,59 @@
             </div>
             <!-- rateplan -->
             <div class="rateplan wow flipInX" data-wow-delay="0.5s">
-              <div class="price wow fadeIn" data-wow-delay="0.9s">$<span class="priceValue">99</span></div>
+              <div class="price wow fadeIn" data-wow-delay="0.9s"> <span class="relative"><span class="oldValue"></span>$<span class="priceValue">99</span></span></div>
               <div class="credits wow fadeIn" data-wow-delay="0.9s">
-                <div><span class="creditsValue">320</span>credits</div>
+                <div><span class="creditsValue">320</span><span class="update"></span>credits</div>
                 <div class="item-price">$0.31 for 1 credit</div>
               </div>
               <div class="discount wow fadeIn" data-wow-delay="0.9s">
                 <div><span class="discountValue">5</span>%</div>
                 <div class="mini">saving</div>
+                <div class="label-rateplan bonus">
+                  <div class="info-lbl">BONUS $13
+                    <div>ONE-TIME OFFER</div>
+                  </div>
+                  <div class="before-lbl top"></div>
+                  <div class="before-lbl bottom"></div>
+                </div>
               </div>
             </div>
             <!-- rateplan -->
             <div class="rateplan wow flipInX" data-wow-delay="0.6s">
-              <div class="price wow fadeIn" data-wow-delay="1s">$<span class="priceValue">149</span></div>
+              <div class="price wow fadeIn" data-wow-delay="1s"><span class="relative"><span class="oldValue"></span>$<span class="priceValue">149</span></span></div>
               <div class="credits wow fadeIn" data-wow-delay="1s">
-                <div><span class="creditsValue">500</span>credits</div>
-                <div class="item-price">$0.30 for 1 credit</div>
+                <div><span class="creditsValue">500&nbsp;<span class="update">+ 20</span></span>credits</div>
+                <div class="item-price update">$0.28 for 1 credit</div>
               </div>
               <div class="discount wow fadeIn" data-wow-delay="1s">
-                <div><span class="discountValue">10</span>%</div>
+                <div class="update"><span class="oldValue">10%</span><span class="discountValue">12</span>%</div>
                 <div class="mini">saving</div>
               </div>
             </div>
             <!-- rateplan -->
             <div class="rateplan wow flipInX" data-wow-delay="0.7s">
-              <div class="price wow fadeIn" data-wow-delay="1.1s">$<span class="priceValue">219</span></div>
+              <div class="price wow fadeIn" data-wow-delay="1.1s"> <span class="relative"><span class="oldValue"></span>$<span class="priceValue">219</span></span></div>
               <div class="credits wow fadeIn" data-wow-delay="1.1s">
-                <div><span class="creditsValue">750</span>credits</div>
+                <div><span class="creditsValue">750</span><span class="update"></span>credits</div>
                 <div class="item-price">$0.29 for 1 credit</div>
               </div>
               <div class="discount wow fadeIn" data-wow-delay="1.1s">
                 <div><span class="discountValue">15</span>%</div>
                 <div class="mini">saving</div>
+                <div class="label-rateplan bonus big">
+                  <div class="info-lbl">BONUS $45
+                    <div>ONE-TIME OFFER</div>
+                  </div>
+                  <div class="before-lbl top"></div>
+                  <div class="before-lbl bottom"></div>
+                </div>
               </div>
             </div>
             <!-- rateplan -->
             <div class="rateplan wow flipInX" data-wow-delay="0.7s">
-              <div class="price wow fadeIn" data-wow-delay="1.1s">$<span class="priceValue">299</span></div>
+              <div class="price wow fadeIn" data-wow-delay="1.1s"> <span class="relative"><span class="oldValue"></span>$<span class="priceValue">299</span></span></div>
               <div class="credits wow fadeIn" data-wow-delay="1.1s">
-                <div><span class="creditsValue">1070</span>credits</div>
+                <div><span class="creditsValue">1070</span><span class="update"></span>credits</div>
                 <div class="item-price">$0.28 for 1 credit</div>
               </div>
               <div class="discount wow fadeIn" data-wow-delay="1.1s">
@@ -122,9 +137,9 @@
             </div>
             <!-- rateplan -->
             <div class="rateplan wow flipInX" data-wow-delay="0.7s">
-              <div class="price wow fadeIn" data-wow-delay="1.1s">$<span class="priceValue">389</span></div>
+              <div class="price wow fadeIn update" data-wow-delay="1.1s"> <span class="relative"><span class="oldValue">$389</span>$<span class="priceValue">350</span></span></div>
               <div class="credits wow fadeIn" data-wow-delay="1.1s">
-                <div><span class="creditsValue">1400</span>credits</div>
+                <div><span class="creditsValue">1400</span><span class="update"></span>credits</div>
                 <div class="item-price">$0.28 for 1 credit</div>
               </div>
               <div class="discount wow fadeIn" data-wow-delay="1.1s">
@@ -134,30 +149,86 @@
             </div>
             <!-- rateplan -->
             <div class="rateplan wow flipInX" data-wow-delay="0.7s">
-              <div class="price wow fadeIn" data-wow-delay="1.1s">$<span class="priceValue">459</span></div>
+              <div class="price wow fadeIn" data-wow-delay="1.1s"> <span class="relative"><span class="oldValue"></span>$<span class="priceValue">459</span></span></div>
               <div class="credits wow fadeIn" data-wow-delay="1.1s">
-                <div><span class="creditsValue">1700</span>credits</div>
+                <div><span class="creditsValue">1700</span><span class="update"></span>credits</div>
                 <div class="item-price">$0.27 for 1 credit</div>
               </div>
               <div class="discount wow fadeIn" data-wow-delay="1.1s">
                 <div><span class="discountValue">17</span>%</div>
                 <div class="mini">saving</div>
+                <div class="label-rateplan recommend">
+                  <div class="info-lbl">WE
+                    <div>RECOMMEND</div>
+                  </div>
+                  <div class="before-lbl top"></div>
+                  <div class="before-lbl bottom"></div>
+                </div>
               </div>
             </div>
             <!-- rateplan -->
             <div class="rateplan wow flipInX" data-wow-delay="0.7s">
-              <div class="price wow fadeIn" data-wow-delay="1.1s">$<span class="priceValue">919</span></div>
+              <div class="price wow fadeIn" data-wow-delay="1.1s"> <span class="relative"><span class="oldValue"></span>$<span class="priceValue">919</span></span></div>
               <div class="credits wow fadeIn" data-wow-delay="1.1s">
-                <div><span class="creditsValue">3400</span>credits</div>
+                <div><span class="creditsValue">3400</span><span class="update"></span>credits</div>
                 <div class="item-price">$0.27 for 1 credit</div>
               </div>
               <div class="discount wow fadeIn" data-wow-delay="1.1s">
                 <div><span class="discountValue">17</span>%</div>
                 <div class="mini">saving</div>
+                <div class="label-rateplan profitable">
+                  <div class="info-lbl">THE MOST
+                    <div>PROFITABLE</div>
+                  </div>
+                  <div class="before-lbl top"></div>
+                  <div class="before-lbl bottom"></div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="reteplanDetails wow fadeIn"></div>
+          <div class="rateplanDetails wow fadeIn">
+            <div class="infoTitleCredits"><strong><span class="credits">320</span>&nbsp;CREDITS&nbsp;</strong>plan</div>
+            <div class="detailsList">
+              <div class="titleDetails">PLAN CAPACITY</div>
+              <div class="detail">
+                <p><i class="vc-messages"></i><span class="msgCount">100</span>private messages</p>
+              </div>
+              <div class="detail">
+                <p><i class="vc-pht_video"> <span class="path1"></span><span class="path2"></span></i><span class="girlCount">100</span>premium photos&videos</p>
+              </div>
+              <div class="detail">
+                <p><i class="vc-chat"></i><span class="minutesCount">1000</span>chat minutes</p>
+              </div>
+              <div class="detail">
+                <p><i class="vc-girls"></i><span class="contactsCount">50</span>girls contacts</p>
+              </div>
+              <div class="titleDetails">ALWAYS FREE AND UNLIMITED</div>
+              <div class="detail unlimited">
+                <p><i class="vc-checkOk"></i>Likes and Winks</p>
+              </div>
+              <div class="detail unlimited">
+                <p><i class="vc-checkOk"></i>Turn on webcam in chat</p>
+              </div>
+              <div class="detail unlimited">
+                <p><i class="vc-checkOk"></i>View photos&videos</p>
+              </div>
+              <div class="detail unlimited">
+                <p><i class="vc-checkOk"></i>View private messages</p>
+              </div>
+              <button class="buyNow">Buy now!</button>
+              <div class="miniBlockInfo"><i class="vc-information"></i>
+                <p>
+                  Credits are valid infinitely<br>
+                  and are added instantly
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="bottomSectionRateplan">
+            <div class="titleInfoRateplan">100% Safe Guarantee and Confident Payments</div>
+            <div><img src="img/buyCreditsPage/iconsPayment.png" alt=""/></div>
+            <div class="pull-right">Powered by&nbsp;<a href="#" target="_blank">MultiCards</a></div>
+          </div>
         </div>
       </div>
     </form>

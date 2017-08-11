@@ -1,0 +1,66 @@
+$header_html[
+<div class="header">
+	<div class="logo">
+		<a href="^if($user){^Users:getUri[$user.id;$user.type;$.uri[$user.seo_uri_uri] $.age($user.birth_age) $.name[$user.name]];/}">
+			<img src="/i/logo.png?1" alt="^lang[$SEO.logo_alt_en;$SEO.logo_alt_ru]">
+		</a>
+	</div>
+	<div class="nav-menu ^if($user){auth-user}{no-auth-user}">
+		<ul>
+			^if(!$user){<li class="popup-reg" rel="popup-registration"><a href="#registration">^lang[Join Now<span>free</span>;Войти]</a></li>}
+			<li^if(in '/search/' || in '/poisk/'){ class="active"}><a href="/^lang[search;poisk]/">^lang[Find ^if($user.type eq 'W'){Men;Girls};Поиск]</a></li>
+			<li^if(in '/girls/' || in '/men/' || in '/devushki/'){ class="active"}><a href="/^if($user.type eq 'W'){men;^lang[girls;devushki]}/?online=1">^if($user.type eq 'W'){^lang[Men Online;Мужчины онлайн];^lang[Girls Online;Девушки онлайн]}<span>$GLOBAL_online</span></a></li>
+			$modUri[^getModUri[9]]
+			<li^if(in $modUri){ class="active"}><a href="$modUri">^lang[About Us;О нас]</a></li>
+#			<li><a href="javascript:void(0)">^lang[News;Новости]</a></li>
+			$modUri[^getModUri[3]]
+			<li^if(in $modUri){ class="active"}><a href="$modUri">^lang[Contact Us;Контакты]</a></li>
+			$modUri[^getModUri[21]]
+			<li^if(in '$modUri'){ class="active"}><a href="$modUri">^lang[Services;Услуги]</a></li>
+			$modUri[^getModUri[22]]
+			<li^if(in '$modUri'){ class="active"}><a href="$modUri">^lang[Assistance;Сервисы]</a></li>
+#			<li><a href="javascript:void(0)">FAQ</a></li>
+		</ul>
+	</div>
+	^if(!$notLangShow){
+		<div class="language-site">
+			<div class="title a-center">^lang[Language;Язык сайта]:</div>
+			<div class="language-button checkbox-slider">
+				^if($sLang eq 'ru'){
+					<span data-tooltip-pos="bottom" data-tooltip="Язык сайта &mdash^; русский">RU</span>
+					<a href="$env:REQUEST_SCHEME://${domain_main}">
+						<div class="begunok"><div></div></div>
+						<span data-tooltip-pos="bottom" data-tooltip="Change to English">EN</span>
+					</a>
+				}{
+					<a href="$env:REQUEST_SCHEME://${domain_ru}">
+						<span class="gray" data-tooltip-pos="bottom" data-tooltip="Change to Russian">RU</span>
+						<div class="begunok on-right"><div></div></div>
+					</a>
+					<span data-tooltip-pos="bottom" data-tooltip="Site on English now">EN</span>
+				}
+			</div>
+		</div>
+	}
+</div>
+]
+
+$sPodBody
+
+^if(!in '/admin/' && !$GLOBAL_not_header){<div id="top-panel">$header_html</div>}
+
+<div class="site-wrapper" id="site-wrapper">
+
+^if(!in '/admin/' && !$GLOBAL_not_header){<div id="top-header">$header_html</div>}
+
+^if(^tNav.count[]>1){
+	<div class="breadcrumbs">
+		^tNav.menu{
+			^if(^tNav.line[]!=^tNav.count[]){
+				<span><a href="$tNav.uri">$tNav.name</a></span> /
+			}{
+				<span>$tNav.name</span>
+			}
+		}
+	</div>
+}

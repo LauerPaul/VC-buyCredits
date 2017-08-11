@@ -1,6 +1,3 @@
-body{
-	background: gray;
-}
 .removeClass {
 	width: 1024px;
 	background: #fff;
@@ -38,7 +35,7 @@ body{
 		display: -webkit-flex; /* Safari */
 		-webkit-flex-direction: column; /* Safari */
 		-webkit-justify-content: center; /* Safari */
-		background: url(../../../img/BuyCreditsPage/promo_bg.png) center;
+		background: $PromoBanner_bg center;
 		
 		&.text-center {
 			text-align: center;
@@ -47,7 +44,7 @@ body{
 		.second-text-promo {
 			color: $d_blue;
 			text-align: center;
-			font-family: 'Nunito-Black';
+			font-family: $FontNunito_black;
 			font-weight: normal;
 			line-height: 48px;
 		}
@@ -68,96 +65,186 @@ body{
 			font-size: 22px;
 			font-weight: 500;
 			text-align: center;
-			font-family: 'Nunito-Regular';
+			font-family: $FontNunito_regular;
 		}
 	}
+}
+// PomoCode window
+.promocode-window {
+	float: right;
+	width: 100%;
+	height: 220px;
+	display: flex;
+	padding: 30px;
+	max-width: 285px;
+	margin-bottom: 15px;
+	background: $bg_green;
+	box-sizing: border-box;
+	flex-direction: column;
+	justify-content: center;
+	display: -webkit-flex; /* Safari */
+	-webkit-flex-direction: column; /* Safari */
+	-webkit-justify-content: center; /* Safari */
 
-	// PomoCode window
-	.promocode-window {
-		float: right;
-		width: 100%;
-		height: 220px;
-		display: flex;
-		padding: 30px;
-		max-width: 285px;
-		margin-bottom: 15px;
-		background: $bg_green;
-		box-sizing: border-box;
-		flex-direction: column;
-		justify-content: center;
-		display: -webkit-flex; /* Safari */
-		-webkit-flex-direction: column; /* Safari */
-		-webkit-justify-content: center; /* Safari */
-		
-		.title-promo {
-			font-size: 18px;
-			color: $d_green;
-			font-weight: bold;
-			line-height: 21px;
-			text-align: center;
-			font-family: 'PT Sans', sans-serif;
-		}
+	.title-promo {
+		font-size: 18px;
+		color: $d_green;
+		font-weight: bold;
+		line-height: 21px;
+		text-align: center;
+		font-family: $FontPTS_ss;
+	}
 
-		form {
-			margin: 0px;
+	.timer {
+		font-size: 14px;
+		font-weight: bold;
+		text-align: center;
+		font-family: $FontPTS_ss;
+		color: rgba(0,0,0,0.54);
+	    margin-top: 12px;
+	    
+	    .clock {
+			max-width: 176px;
+			margin: 0 auto;
+			min-height: 70px;
+			margin-top: 8px;
+	    }
+	}
 
-			input {
-				width: 100%;
-				height: 34px;
-				display: block;
-				margin-top: 15px;
-				padding: 5px 10px;
-				border-radius: 4px;
-				text-align: center;
-				margin-bottom: 12px;
-				box-sizing: border-box;
-				border: 1px solid #c8dcd9;
-			}
-			.promo-button {
-				width: 100%;
-				margin: 0px;
-				height: 34px;
-				display: block;
-				color: #ffffff;
-				cursor: pointer;
-				font-weight: bold;
-				text-align: center;
-				border-radius: 4px;
-				box-sizing: border-box;
-				border: 1px solid #c8dcd9;
-			    @include transition(all 0.6s);
-				font-family: 'PT Sans', sans-serif;
-			    background-image: linear-gradient(to top,#004ecf 0,#0096e9 100%);
+	.bottomLine {
+	    text-align: center;
+		font-family: $FontPTS_ss;
+		font-size: 12px;
+		color: rgba(0,0,0,0.5);
+
+		a {
+			display: inline;
+			    float: none;
+			    text-decoration: underline;
+			    color: $d_blue;
 			    
 			    &:hover {
-			    	background-image: linear-gradient(to top,#0096e9 0,#004ecf 100%);
+			    	text-decoration: none;
 			    }
-			}
 		}
-
-		.description-section-promo {
-			color: #000000;
-			font-size: 12px;
-			margin-top: 12px;
-			text-align: center;
-			font-weight: normal;
-			font-family: 'PT Sans', sans-serif;
-			
-			a {
-				float: none;
-				width: auto;
-				outline: none;
-				color: $d_blue;
-				text-align: center;
-				display: inline-block;
-				text-decoration: underline;
-			    @include transition(all 0.2s);
-				
-				&:hover {
-					text-decoration: none;
-				}
-			}
-		}
-
 	}
+
+	form {
+		margin: 0px;
+
+		input {
+			width: 100%;
+			height: 34px;
+			display: block;
+			margin-top: 15px;
+			padding: 5px 10px;
+			border-radius: 4px;
+			text-align: center;
+			margin-bottom: 12px;
+			box-sizing: border-box;
+			border: 1px solid #c8dcd9;
+		}
+		.promo-button {
+			width: 100%;
+			margin: 0px;
+			height: 34px;
+			display: block;
+			color: #ffffff;
+			cursor: pointer;
+			font-weight: bold;
+			text-align: center;
+			border-radius: 4px;
+			box-sizing: border-box;
+			border: 1px solid #c8dcd9;
+		    @include transition(all 0.6s);
+			font-family: $FontPTS_ss;
+		    background-image: linear-gradient(to top,#004ecf 0,#0096e9 100%);
+		    
+		    &:hover {
+		    	background-image: linear-gradient(to top,#0096e9 0,#004ecf 100%);
+		    }
+		}
+	}
+
+	.description-section-promo {
+		color: #000000;
+		font-size: 12px;
+		margin-top: 12px;
+		text-align: center;
+		font-weight: normal;
+		font-family: $FontPTS_ss;
+		
+		a {
+			float: none;
+			width: auto;
+			outline: none;
+			color: $d_blue;
+			text-align: center;
+			display: inline-block;
+			text-decoration: underline;
+		    @include transition(all 0.2s);
+			
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	.promoInput{
+		position: relative;
+		
+		.errorMess {
+			background: $label-default-BGcolor;
+			box-sizing: border-box;
+			font-family: $FontPTS_ss;
+			position: absolute;
+			padding: 7px 12px;
+			max-width: 195px;
+			font-size: 13px;
+			color: $white;
+		    bottom: 120%;
+			@include border-radius(12px);
+		    
+		    &::before {
+		    	content: "";
+		    	top: 97%;
+		    	position: absolute;
+		    	border: 10px solid transparent;	
+		    	border-top: 10px solid $label-default-BGcolor;
+		    }
+		}
+	}
+
+}
+
+
+.flip-container {
+	perspective: 1000;
+	float: right;
+}
+ 
+.flip-container.hover .flipper {
+	transform: rotateY(180deg);
+}
+ 
+.flip-container, .promocode-window.enterCode, .promocode-window.successCode {
+	width: 285px;
+	height: 220px;
+}
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+.promocode-window.enterCode, .promocode-window.successCode {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.promocode-window.enterCode {
+	z-index: 2;
+}
+.promocode-window.successCode {
+	transform: rotateY(180deg);
 }

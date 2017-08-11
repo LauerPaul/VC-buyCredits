@@ -8,7 +8,8 @@ var gulp = require('gulp'),
     pngquant = require('imagemin-pngquant'),
     cssmin = require('gulp-cssmin'),
     rename = require('gulp-rename'),
-    include = require("gulp-include");
+    include = require("gulp-include"),
+    burbon = require("bourbon");
 
 
 var source = '_application/',
@@ -37,7 +38,8 @@ var source = '_application/',
                                 bower_components.bootstrap + 'scss', 
                                 bower_components.FontAwesome + 'scss', 
                                 bower_components.hover + 'scss', 
-                                bower_components.FontAwesomeAnimation + 'src'
+                                bower_components.FontAwesomeAnimation + 'src',
+                                burbon.includePaths
                                 ]
             }
         },
