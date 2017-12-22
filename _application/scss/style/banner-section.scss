@@ -13,6 +13,10 @@
 	overflow: hidden;
 	position: relative;
 	padding: 12px 3px 15px 3px;
+
+	@media (max-width: 680px) {
+		padding: 12px 0px 0px;
+	}
 	
 	a {
 		float: left;
@@ -21,6 +25,13 @@
 		display: block;
 		max-width: 684px;
 		text-decoration: none;
+		
+		@media (max-width: 999px) and (min-width: 681px){
+			max-width: 475px;
+		}
+		@media (max-width: 680px) {
+			max-width: 100%;
+		}
 	}
 
 	.promo-buyPage {
@@ -36,6 +47,13 @@
 		-webkit-flex-direction: column; /* Safari */
 		-webkit-justify-content: center; /* Safari */
 		background: $PromoBanner_bg center;
+		cursor: default;
+		
+		@media (max-width: 680px) {
+			margin-top: 18px;
+			height: 120px;
+			background: transparent;
+		}
 		
 		&.text-center {
 			text-align: center;
@@ -51,9 +69,29 @@
 
 		.start-text-promo {
 			font-size: 33px;
+			
+			@media (max-width: 999px) {
+				font-size: 24px;
+			}
+			@media (max-width: 680px) {
+			    line-height: 20px;
+			}
+			@media (max-width: 460px) {
+				font-size: 18px;
+			}
 		}
 		.second-text-promo {
 			font-size: 42px;
+			
+			@media (max-width: 999px) {
+				font-size: 28px;
+			}
+			@media (max-width: 680px) {
+				line-height: 40px;
+			}
+			@media (max-width: 460px) {
+				font-size: 23px;
+			}
 		}
 		.green-color-promo {
 			color: $d_green;
@@ -66,6 +104,13 @@
 			font-weight: 500;
 			text-align: center;
 			font-family: $FontNunito_regular;
+			
+			@media (max-width: 999px) {
+				font-size: 18px;
+			}
+			@media (max-width: 680px) {
+				font-size: 14px;
+			}
 		}
 	}
 }
@@ -85,6 +130,11 @@
 	display: -webkit-flex; /* Safari */
 	-webkit-flex-direction: column; /* Safari */
 	-webkit-justify-content: center; /* Safari */
+	
+	@media (max-width: 680px) {
+		background: #f3f6f9;
+	    max-width: 100%;
+	}
 
 	.title-promo {
 		font-size: 18px;
@@ -93,6 +143,7 @@
 		line-height: 21px;
 		text-align: center;
 		font-family: $FontPTS_ss;
+		cursor: default;
 	}
 
 	.timer {
@@ -131,6 +182,11 @@
 
 	form {
 		margin: 0px;
+		
+		@media (max-width: 680px) {
+			max-width: 350px;
+			margin: 0 auto;
+		}
 
 		input {
 			width: 100%;
@@ -172,12 +228,14 @@
 		margin-top: 12px;
 		text-align: center;
 		font-weight: normal;
+		cursor: default;
 		font-family: $FontPTS_ss;
 		
 		a {
 			float: none;
 			width: auto;
 			outline: none;
+			cursor: pointer;
 			color: $d_blue;
 			text-align: center;
 			display: inline-block;
@@ -220,21 +278,38 @@
 
 .flip-container {
 	perspective: 1000;
-	float: right;
+	
+	@media (min-width: 680px) {
+		float: right;
+	}
 }
  
 .flip-container.hover .flipper {
 	transform: rotateY(180deg);
+	
+	.promocode-window.successCode {
+		backface-visibility: visible;
+		z-index: 5;
+	}
 }
  
 .flip-container, .promocode-window.enterCode, .promocode-window.successCode {
 	width: 285px;
 	height: 220px;
+
+	@media (max-width: 680px) {
+		width: 100%;
+	}
+	
 }
 .flipper {
-	transition: 0.6s;
-	transform-style: preserve-3d;
+	@include transition(all 0.6s);
+	-webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 	position: relative;
+	
+
 }
 .promocode-window.enterCode, .promocode-window.successCode {
 	backface-visibility: hidden;
@@ -246,5 +321,5 @@
 	z-index: 2;
 }
 .promocode-window.successCode {
-	transform: rotateY(180deg);
+	@include transform(rotateY(180deg));
 }

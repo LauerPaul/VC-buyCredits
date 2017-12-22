@@ -298,3 +298,9 @@ buyCreditsPage = {
 }
 
 $(document).ready(function() { if($('.payPage').length > 0) buyCreditsPage.myBalancePage(); });
+$(document).on('click', '.wrapper-title-mobile', function(){
+	var _this = $(this),
+		parent = _this.parents('.wrapper-mobile');
+
+	parent.toggleClass('open');
+})

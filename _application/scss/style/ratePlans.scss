@@ -3,21 +3,43 @@
 .rateplanChoose {
     height: auto;
     margin-top: 15px;
-    padding: 32px 105px 32px 185px;
+    padding: 30px 25px 30px 25px;
     background: $RatePlan_bg no-repeat center top;
     background-size: cover;
     box-sizing: border-box;
 	-webkit-flex-wrap: wrap!important;
 	-ms-flex-wrap: wrap!important;
 	flex-wrap: wrap!important;
+	
+	@media (max-width: 800px) {
+		padding: 0px;
+		margin-left: 13px;
+		margin-right: 13px;
+	}
+
+	@media (max-width: 460px) {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+
 }
 
 .rateplans {
-    width: 450px;
+    width: calc(100% - 260px);
+	@media (max-width: 999px) and (min-width: 801px) {
+    	width: calc(100% - 260px);
+	}
+	@media (max-width: 800px) {
+		width: 100%;
+		
+		&.close {
+			display: none;
+		}
+	}
     
 	.relative {
 		position: relative;
-	}	
+	}
 
     .rateplan {
     	width: 100%;
@@ -25,11 +47,10 @@
     	color: #ffffff;
     	cursor: pointer;
     	position: relative;
-    	margin-bottom: 5px;
+		margin-bottom: 13px;
     	border: 1px solid #fff;
     	padding: 7px 5px 6px 30px;
     	background: rgba(0, 0, 0, 0.5);
-    	@include border-radius(25px 0 0 25px);
     	border-right: none;
     	box-sizing: border-box;
 
@@ -46,6 +67,254 @@
 		-webkit-transition-property: color, background-color;
 		transition-property: color, background-color;
 		
+		&:not(.activeRateplan){
+			@media (min-width: 801px) {
+				width: calc(100% - 14px);
+				border-right: 1px solid #fff;
+			}
+		}
+		@media (max-width: 460px) {
+		    padding-right: 60px !important;
+		    padding-left: 15px !important;
+		}
+
+
+		.percent-box {
+			font-size: 16px;
+			font-weight: 600;
+			color: rgba(255,255,255,.7);
+			margin-top: 7px;
+			width: 117px;
+			@media (max-width: 999px) {
+				margin-top: -2px;
+				text-align: center;
+			}
+			@media (max-width: 800px) {
+				font-size: 14px;
+			}
+		}
+		&:not(.activeRateplan){
+			.percent-box {
+				width: 105px;
+			    font-size: 14px;
+			}
+		}
+		.promo-label {
+			font-weight: 600;
+			margin-left: 25px;
+			margin-top: 7px;
+			color: $white;
+			
+			@media (max-width: 999px) {
+				margin-top: 2px;
+				font-size: 13px;
+				text-align: center;
+			}
+			@media (max-width: 800px) {
+    			margin-left: 0px;
+			    margin-right: 23px;
+			}
+			@media (max-width: 460px) {
+				display: none;
+			}
+		}
+		&.activeRateplan, &:hover {
+			.percent-box {
+				color: rgba(0,0,0,.7);
+			}
+			.promo-label {
+				color: #21b7aa;
+			}
+		}
+		
+		ul.list-bonus-steps {
+		    width: calc(100% - 330px);
+		    list-style: none;
+	        padding-top: 4px;
+            opacity: 0.24;
+            
+			@media (max-width: 999px) {
+				padding-top: 3px;
+            }
+		    
+		   li {
+			    display: inline-block;
+			    width: 62px;
+			    box-sizing: border-box;
+			    background: #FFDD92;
+			    text-align: center;
+			    height: 25px;
+			    padding: 4px 0px;
+			    color: #CEA229;
+			    float: left;
+				position: relative;
+				padding-left: 10px;
+				
+				&:first-child {
+					padding-left: 0px;
+				}
+
+				&:last-child {
+					&::before, &::after {display: none;}
+				}
+			   
+			    &::before {
+					content: '';
+					border: 20px solid transparent;
+					border-left: 11px solid rgb(35, 38, 38);
+					position: absolute;
+					left: 100%;
+					z-index: 1;
+					top: -50%;
+					bottom: -50%;
+					margin: auto;
+					height: 0px;
+					-webkit-transform: perspective(1px) translateZ(0);
+					transform: perspective(1px) translateZ(0);
+					-webkit-transition-duration: 0.2s;
+					transition-duration: 0.2s;
+					-webkit-transition-property: color, background-color;
+					transition-property: color, background-color;
+			    }
+			    &::after {
+					content: '';
+					border: 13px solid transparent;
+					border-left: 8px solid #FFDD92;
+					position: absolute;
+					left: 100%;
+					z-index: 1;
+					top: -50%;
+					bottom: -50%;
+					margin: auto;
+					height: 0px;
+					-webkit-transform: perspective(1px) translateZ(0);
+					transform: perspective(1px) translateZ(0);
+					-webkit-transition-duration: 0.2s;
+					transition-duration: 0.2s;
+					-webkit-transition-property: color, background-color;
+					transition-property: color, background-color;
+			    }
+			    
+			    &.active {
+			    	.checked-label {
+						background: url(/img/BuyCreditsPage/check.png) no-repeat center;
+						width: 15px;
+						height: 15px;
+						display: block;
+						position: absolute;
+						top: -8px;
+						left: -5px;
+						z-index: 5;
+			    	}
+			    }
+				
+				@media (max-width: 999px) {
+					&:not(.checked) {
+						display:none;
+					}
+					&::before {
+						display: none !important;
+					}
+				}
+
+			    &.checked {
+			    	background: #F2B800;
+					color: #fff;
+					height: 30px;
+					position: relative;
+					top: -2px;
+					padding-top: 6px;
+			    	
+			    	&::after {
+		    		    border: 15px solid transparent;
+						border-left: 9px solid #F2B800;
+					}
+				    &::before {
+						border-left: 12px solid rgb(35, 38, 38);
+					}					
+			    }
+			}
+			@media (max-width: 800px) {
+				width: 45px;
+            }
+		}
+		
+		@media (max-width: 800px) {
+			background: transparent;
+			border-radius: 0px;
+			border: none;
+			margin-bottom: 0px;
+			border-bottom: 1px solid rgba(255,255,255,0.7);
+		
+			.mobile-label {
+				text-align: center;
+				font-size: 8.4px;
+				
+				@media (max-width: 460px) {
+					width: 70px;
+					margin-right: 25px;
+	 				font-size: 7.4px;
+				}
+
+				.big {
+					text-align: center;
+					font-size: 14px;
+					color: $label-default-BGcolor;
+					font-weight: bold;
+	
+					@media (max-width: 460px) {
+						font-size: 12px;
+					}
+				}
+
+				&:nth-child(2){
+					display: none;
+				}
+			}
+
+			.mobile-arrow {
+				height: 100%;
+				position: absolute;
+				width: 20px;
+				right: 8px;
+			    top: 0;
+			    
+				@media (max-width: 460px) {
+					right: -5px;
+			    }
+				
+				&::after {
+					content: '';
+					width: 8px;
+					height: 13px;
+					background: url(/img/BuyCreditsPage/rateplanArrow.png) no-repeat center;
+					position: absolute;
+					top: -50%;
+					bottom: -50%;
+					right:12px;
+					margin: auto;
+				}
+			}
+
+			&.activeRateplan,
+			&:hover {
+				border-color: #c5c8cb;
+			    border-top: 1px solid #c5c8cb;
+			    margin-top: -1px;
+			    margin-bottom: 1px;
+			    
+				.mobile-arrow {
+					&::after {
+						background: url(/img/BuyCreditsPage/rateplanArrowHover.png) no-repeat center;
+					}
+				}
+			}
+		}
+
+		@media (max-width: 500px) {
+			padding: 7px 0px 6px 0px;
+		}
+
 		&:last-child {
 			margin-bottom: 0px;
 		}
@@ -55,7 +324,7 @@
 		}
 
 		.update {
-			color: #7DDA1C;
+			color: #F2B800;
 			position: relative;
 			
 			.oldValue {
@@ -81,7 +350,15 @@
 			text-align: center;
 			line-height: 21px;
 			font-family: $FontPTS_ss;
+			
+			@media (max-width: 999px) {
+				width: 75px;
+			}
 
+			@media (max-width: 500px) {
+				font-size: 18px;
+			}
+			
 			.priceValue {
 				margin-left: 2px;
 				font-weight: 600;
@@ -93,11 +370,28 @@
 				transition-duration: 0.2s;
 				-webkit-transition-property: color, background-color;
 				transition-property: color, background-color;
-			}	
+			}
+			@media (max-width: 500px) {
+				.oldValue {
+					right: auto;
+					left: 40%;
+					top: 0;
+					bottom: auto;
+				    top: -5px;
+				}
+			}
 
 			&.update {
-				color: #579814;
+				color: rgba(255,255,255,.42);
 				
+				@media (max-width: 500px) {
+					padding-top: 8px;
+				}
+
+				@media (max-width: 460px) {
+					font-size: 16px;
+				}
+
 				.priceValue {
 					color: #7DDA1C;
 				}
@@ -105,11 +399,24 @@
 		}
 
 		.credits {
-			width: 154px;
+			width: 200px;
 			font-size: 18px;
 			font-weight: 600;
+			margin-right: 30px;
 			line-height: 14px;
 			font-family: $FontPTS_ss;
+			
+			@media (max-width: 999px) {
+				width: 55%;
+			}
+			@media (max-width: 800px) {
+				margin-right: -2px;
+			}
+
+			@media (max-width: 460px) {
+				margin-right: 15px;
+				font-size: 12px;
+			}
 			
 			.creditsValue {
 				margin-right: 3px;
@@ -120,7 +427,7 @@
 				color: rgba(255,255,255, 0.7);
 				
 				&.update {
-					color: #579814;
+					color: rgba(255,255,255,.42);
 				}
 			}
 		}
@@ -131,6 +438,18 @@
 			font-weight: 400;
 			line-height: 14px;
 			font-family: $FontPTS_ss;
+
+			@media (max-width: 500px) {
+				width: 90px;
+			}
+			@media (max-width: 460px) {
+				width: 70px;
+				margin-right: 20px;
+				
+				&.desk-block {
+					display: none !important;
+				}
+			}
 
 			.mini {
 				font-size: 12px;
@@ -143,12 +462,17 @@
 			height: 48px;
 			left: -90px;
 			position: absolute;
-			transform: rotate(-28deg);
+			@include transform(rotate(-28deg));
 			top: 24px;
 			z-index: 10;
 	     	color: #fff;
 	     	box-sizing: border-box;
-		    
+	     	
+			@media (max-width: 800px) {
+				display: none !important;
+			}
+			
+
 		    &::after {
 				content: "";
 				z-index: 3; 
@@ -352,8 +676,23 @@
 			background: #fff;
 			color: #4d4d4d;
 			
+
+			ul.list-bonus-steps {
+				opacity: 1;
+				
+				li {
+					&::before {
+						border-left: 11px solid $white;	
+					}
+
+					&.checked::before {
+					   border-left: 12px solid #fff;
+					}
+				}
+			} 
+
 			.update {
-				color: #5A9614;
+				color: #CEA229;
 			}
 
 			.oldValue {
@@ -373,7 +712,7 @@
 
 				&.update {
 					.priceValue {
-						color: #5A9614;
+						color: rgba(255,255,255,.42);
 					}
 				}
 			}
@@ -383,7 +722,7 @@
 				color: rgba(0,0,0, 0.54);
 				
 				&.update{
-					color: #5A9614;
+					color: rgba(0,0,0,.5);
 				}
 			}
 		}
@@ -443,6 +782,41 @@
 	width: 100%;
 	text-align: right;
 	
+	&.mobile {
+		display: none;
+	}
+	
+	@media (max-width: 800px) {
+		display: none;
+		
+		&.mobile {
+			display: block;
+		    text-align: center;
+			margin: 20px 12px 0;
+			border-top: 1px solid #e6e6e6;
+			width: calc(100% - 24px);
+		
+			.titleInfoRateplan {
+				font-size: 15px;
+				color: #464646;
+				margin-bottom: 4px;
+			}
+			.pull-right {
+				color: #c1c1c1;
+				font-size: 12px;
+				margin-top: 4px;
+				
+				a {
+					color: #464646;
+					
+					&:hover {
+						color: #464646 !important;
+					}
+				}
+			}
+		}
+	}
+	
 	.titleInfoRateplan {
 		color: #ffffff;
 		font-size: 24px;
@@ -464,5 +838,18 @@
 				color: #ffffff !important;
 			}
 		}
+	}
+}
+
+@media (max-width: 999px) {
+	.payPage_padded {
+		img {
+			max-width: 100%;
+		}
+
+		@media (max-width: 800px) {
+			padding: 0px;
+		}
+
 	}
 }

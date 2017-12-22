@@ -6,11 +6,255 @@ strong {
 	font-weight: bold;
 }
 .payPage_padded {
-	padding: 0 12px 2px;
+	padding: 0 0px 2px;
 }
 .pullLeft {
 	float: left;
 }
 .payPage * {
 	box-sizing: border-box;
+}
+
+.wrapper-mobile {
+	@media (max-width: 800px) {
+	    display: block;
+	    clear: both;
+	}
+
+	.wrapper-title-mobile {
+		@media (min-width: 801px) {
+			display: none !important;
+		}
+		@media (max-width: 800px) {
+		    max-width: 100% !important;
+			// height: 48px !important;
+			text-decoration: none !important;
+			float: none !important;
+			font-size: 16px;
+			text-transform: uppercase;
+			padding-left: 13px;
+			padding-top: 14px;
+			padding-bottom: 14px;
+			border-top: 2px solid #f3f3f3;
+		    display: block !important;
+		    position: relative;
+		    cursor: pointer;
+		}
+
+		&::after {
+			content: '';
+			width: 13px;
+			height: 8px;
+			display: block;
+			background: url(/img/BuyCreditsPage/arrow-mobile.png) no-repeat right top;
+			position: absolute;
+			right: 12px;
+			top: -50%;
+			bottom: -50%;
+			margin: auto;
+		}
+	}
+	.hide-toggle-mobile {
+		opacity: 0;
+		height: 0;
+		overflow: hidden;
+		@include transition(all 0.5s);
+		
+		@media (min-width: 998px) {
+			&.inform {
+				opacity: 1;
+				height: auto;
+			}
+		}
+	}
+
+	&.open {
+		.wrapper-title-mobile {
+			font-weight: bold;
+			
+			&::after {
+				background: url(/img/BuyCreditsPage/arrow-mobile.png) no-repeat left top;
+			}	
+		}
+
+		.hide-toggle-mobile {
+			opacity: 1;
+			height: auto;
+		}
+	}
+}
+
+@media (max-width: 800px) {
+	.hideBlock {
+		display: none !important;
+	}
+	.mobile-block {
+		background: #f3f6f9;
+		padding: 0px 12px;
+		padding-top: 30px;
+		position: relative;
+		overflow: hidden;
+		
+		.item-list-mobile {
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+			-webkit-align-items: center;
+			-ms-flex-align: center;
+			align-items: center;
+			margin-bottom: 18px;
+			
+			.icon-list {
+				margin-right: 20px;
+			}
+
+			.item-mobile-info {
+				.mini-info {
+					font-size: 14px;
+					font-weight: normal;
+					color: #808080;
+				}
+				.bold-info {
+					font-weight: bold;
+					font-size: 16px;
+					color: #4d4d4d;
+				}
+			}
+		}
+	
+		.list-with-icon {
+			position: relative;
+			overflow: hidden;
+		}
+
+		.title-mobile-spend {
+			font-size: 24px;
+			color: $d_green;
+			font-weight: bold;
+			text-align: center;
+			margin-top: 10px;
+			margin-bottom: 20px;
+		}
+
+		.text-mobile-spend {
+			font-size: 16px;
+			font-weight: normal;
+			text-align: center;
+			margin-bottom: 35px;
+			
+			> span {
+				color: $d_green;
+				font-weight: bold;
+			}
+		}
+		img.graphic {
+			display: block;
+			margin: 0 auto;
+			margin-bottom: 25px;
+		}
+	}
+
+	.mobile-title-not-hide {
+		max-width: 100% !important;
+		text-decoration: none !important;
+		float: none !important;
+		font-size: 16px;
+		text-transform: uppercase;
+		padding-left: 13px;
+		padding-top: 14px;
+		border-top: 2px solid #f3f3f3;
+	    display: block !important;
+	    position: relative;
+	    cursor: pointer;
+	    font-weight: bold;
+	}
+	.mobile-back {
+		width: 105px;
+		height: 35px;
+		border: 2px solid $d_blue;
+		@include border-radius(4px);
+		cursor: pointer;
+		outline: none;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: $d_blue;
+		margin-right: 13px;
+		display: inline-block;
+		background: transparent;
+		
+		@media (max-width: 460px) {
+			font-size: 14px;
+		}
+	}
+}
+@media (min-width: 801px) {
+	.mobile-block,
+	.mobile-title-not-hide,
+	.mobile-arrow,
+	.mobile-label,
+	.mobile-back {
+		display: none !important;
+	}
+}
+@media (max-width: 460px) {
+	.desk-block {
+		display: none;
+	}
+	.mobile-block.mobilePay {
+		padding-top: 6px;
+		background: white;
+		margin-bottom: 25px !important;
+	}
+}
+
+.way-block {
+	border: 2px solid #21b7aa;
+	padding: 20px;
+	font-family: "PT Sans",sans-serif;
+	
+	label {
+		display: block;
+		margin-bottom: 5px;
+		font-weight: bold;
+		vertical-align: middle;
+		cursor: pointer;
+	}
+	p {
+		color: #737373;
+		margin-left: 15px;
+		margin-bottom: 20px;
+		line-height: 14px;
+	}
+	.tag {
+		background: blue;
+		color: white;
+		padding: 1px 5px;
+		display: inline-block;
+		border-radius: 4px;
+		font-size: 50%;
+		vertical-align: middle;
+	}
+	.buyNow {
+		margin-top: 0;
+	}
+}
+
+.changeCurrency{
+	width: 400px;
+	max-width: 100%;
+    text-align: center;
+	margin: 10px auto;
+}
+.changeCurrency .currBlItem{
+	display: inline-block;
+	vertical-align: middle;
+}
+.changeCurrency .currBlItem img{
+	width: 26px;
+}
+.changeCurrency .currBlItem .currBlText{
+	color: #19488e;
+    font-weight: 700;
 }
