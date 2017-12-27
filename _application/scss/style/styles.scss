@@ -258,3 +258,65 @@ strong {
 	color: #19488e;
     font-weight: 700;
 }
+
+
+/*Collapse*/
+$icomoon-font-path: "/css/buy_credits/min/iconV" !default;
+@font-face {
+  font-family: 'iconV';
+  src:  url('#{$icomoon-font-path}/iconV.eot?70xoty');
+  src:  url('#{$icomoon-font-path}/iconV.eot?70xoty#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/iconV.ttf?70xoty') format('truetype'),
+    url('#{$icomoon-font-path}/iconV.woff?70xoty') format('woff'),
+    url('#{$icomoon-font-path}/iconV.svg?70xoty#iconV') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.collapse {
+	.item-case {
+		.item-case-header {
+			text-transform: uppercase;
+			color: #808080;
+			padding: 15px 0;
+			box-sizing: border-box;
+			background: #FFFFFF;
+			position: relative;
+			font-weight: bold;
+			font-size: 24px;
+			cursor: pointer;
+			
+			&::after {
+				content: "\e901";
+				position: absolute;
+				top: -50%;
+				bottom: -50%;
+				height: 16px;
+				margin: auto;
+				right: 15px;
+				left: auto;
+				font-size: 14px;
+				color: #B3B3B3;
+				font-family: 'iconV' !important;
+				speak: none;
+				font-style: normal;
+				font-weight: normal;
+				font-variant: normal;
+				text-transform: none;
+				line-height: 1;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+		}
+
+		.item-case-body {
+		}
+		
+		&.show {
+			.item-case-header {
+				&::after {
+					content: "\e900";
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600');
+.to-spend-credits.collapse {
+	.item-case {
+		.item-case-body {
+			background: #E6E6E6;
+			padding-top: 22px;
+			padding-bottom: 20px;
+			
+			.case {
+
+				&:not(.scheme) {
+					padding-left: 5px;
+				}
+
+				&.scheme {
+					padding-right: 5px;
+					padding-top: 30px;
+					padding-bottom: 30px;
+					
+					img {
+						max-width: 100%;
+					}
+				}
+
+				.title-case {
+					color: #4D4D4D;
+					font-size: 48px;
+					font-family: 'Open Sans', sans-serif;
+					font-weight: 300;
+					margin-bottom: 20px;
+				}
+				.description-case {
+					margin-top: 20px;
+					margin-bottom: 10px;
+					font-size: 23px;
+					color: #808080;
+
+					>span {
+						color: #21B7AA;
+						font-weight: bold;
+					}
+				}
+			}
+
+			.list-info {
+				padding-bottom: 20px;
+				padding-top: 10px;
+				
+				.item {
+					padding: 10px 20px 10px 0px;
+					
+					.image {
+						float: left;
+						margin-right: 15px;
+						width: 40px;
+						height: 40px;
+						
+						img {
+							max-width: 100%;
+						}
+					}
+
+					.title {
+						width: calc(100% - 55px);
+						color: #808080;
+						font-size: 14px;
+						float: left;
+					}
+
+					.description {
+						width: calc(100% - 55px);
+						color: #4D4D4D;
+						font-weight: bold;
+						font-size: 21px;
+						float: left;
+					}
+				}
+			}
+		}
+	}
+}
