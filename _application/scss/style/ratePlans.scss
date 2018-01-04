@@ -2,8 +2,8 @@
 
 .rateplanChoose {
     height: auto;
-    margin-top: 15px;
-    padding: 30px 25px 30px 25px;
+   margin-top: -1px;
+    padding: 20px 20px 30px 96px;
     background: $RatePlan_bg no-repeat center top;
     background-size: cover;
     box-sizing: border-box;
@@ -25,9 +25,9 @@
 }
 
 .rateplans {
-    width: calc(100% - 260px);
+    width: calc(100% - 280px);
 	@media (max-width: 999px) and (min-width: 801px) {
-    	width: calc(100% - 260px);
+    	width: calc(100% - 280px);
 	}
 	@media (max-width: 800px) {
 		width: 100%;
@@ -43,14 +43,14 @@
 
     .rateplan {
     	width: 100%;
-    	height: 48px;
+    	height: 67px;
     	color: #ffffff;
     	cursor: pointer;
     	position: relative;
-		margin-bottom: 13px;
     	border: 1px solid #fff;
-    	padding: 7px 5px 6px 30px;
-    	background: rgba(0, 0, 0, 0.5);
+    	border-bottom: 0px;
+    	padding: 7px 15px 6px 0px;
+    	background: rgba(255,255,255,.24);
     	border-right: none;
     	box-sizing: border-box;
 
@@ -66,13 +66,12 @@
 		transition-duration: 0.2s;
 		-webkit-transition-property: color, background-color;
 		transition-property: color, background-color;
-		
-		&:not(.activeRateplan){
-			@media (min-width: 801px) {
-				width: calc(100% - 14px);
-				border-right: 1px solid #fff;
-			}
+
+		&:last-child {
+			border-bottom: 1px solid #fff;
 		}
+		
+
 		@media (max-width: 460px) {
 		    padding-right: 60px !important;
 		    padding-left: 15px !important;
@@ -145,7 +144,7 @@
 			    text-align: center;
 			    height: 25px;
 			    padding: 4px 0px;
-			    color: #CEA229;
+			    color: #21B7AA;
 			    float: left;
 				position: relative;
 				padding-left: 10px;
@@ -218,7 +217,7 @@
 				}
 
 			    &.checked {
-			    	background: #F2B800;
+			    	background: #21B7AA;
 					color: #fff;
 					height: 30px;
 					position: relative;
@@ -227,7 +226,7 @@
 			    	
 			    	&::after {
 		    		    border: 15px solid transparent;
-						border-left: 9px solid #F2B800;
+						border-left: 9px solid #21B7AA;
 					}
 				    &::before {
 						border-left: 12px solid rgb(35, 38, 38);
@@ -323,28 +322,35 @@
 			display: none;
 		}
 
+		.green {
+			color: #21B7AA;
+		}
+
+		.label-wrapper {
+			color: rgba(255,255,255,.7);
+			height: 25px;
+			background: rgba(0,0,0,.24);
+			font-size: 13px;
+			border: 1px solid rgba(0,0,0,.4);
+			width: 100%;
+			margin-top: 2px;
+		}
+
 		.update {
-			color: #F2B800;
 			position: relative;
 			
 			.oldValue {
-				display: block;
-			    color: #fff;
-			    font-size: 11px;
-			    position: absolute;
-			    right: calc(100% + 3px);
-			    border-bottom: 1px solid rgba(254,254,254,0.5);
-			    line-height: 0;
-			    height: 1px;
-			    top: -50%;
-			    bottom: -50%;
-			    margin: auto;
+				color: rgba(255,255,255,.5);
+				border-bottom: 1px solid rgba(255,255,255,.5);
+				line-height: 0;
+				height: 1px;
+				display: inline-block;
 			}
 		}
 
 		.price {
-			width: 130px;
-			color: #8d8e90;
+			width: 136px;
+			color: rgba(255,255,255,.7);
 			font-size: 21px;
 			font-weight: 400;
 			text-align: center;
@@ -382,7 +388,7 @@
 			}
 
 			&.update {
-				color: rgba(255,255,255,.42);
+				color: rgba(255,255,255,.98);
 				
 				@media (max-width: 500px) {
 					padding-top: 8px;
@@ -398,11 +404,14 @@
 			}
 		}
 
+		.second-wrapper-tarif {
+			width: calc(100% - 136px);
+		}
+
 		.credits {
-			width: 220px;
-			font-size: 18px;
+		    width: calc(100% - 120px);
+			font-size: 14px;
 			font-weight: 600;
-			margin-right: 15px;
 			line-height: 14px;
 			font-family: $FontPTS_ss;
 			
@@ -419,22 +428,26 @@
 			}
 			
 			.creditsValue {
-				margin-right: 3px;
+				padding-right: 10px;
+				box-sizing: border-box;
+			    width: 160px;
 			}
 
 			.item-price {
-				font-size: 12px;
+				font-size: 14px;
 				color: rgba(255,255,255, 0.7);
+				font-weight: normal;
 				
 				&.update {
-					color: rgba(255,255,255,.42);
+					color: rgba(255,255,255,.98);
+				    width: calc(100% - 160px);
 				}
 			}
 		}
 
 		.discount {
-			width: 136px;
-			font-size: 18px;	
+			width: 120px;
+			font-size: 14px;	
 			font-weight: 400;
 			line-height: 14px;
 			font-family: $FontPTS_ss;
@@ -458,73 +471,31 @@
 		}
 
 		.label-rateplan {
-			width: 120px;
-			height: 48px;
-			left: -90px;
+			width: 76px;
+			height: 38px;
+			right: 100%;
 			position: absolute;
-			@include transform(rotate(-28deg));
-			top: 24px;
 			z-index: 10;
 	     	color: #fff;
 	     	box-sizing: border-box;
+	     	top: -50%;
+			bottom: -50%; 
+			margin: auto;
 	     	
 			@media (max-width: 800px) {
 				display: none !important;
 			}
-			
-
-		    &::after {
-				content: "";
-				z-index: 3; 
-				width: 25px;
-				height: 24px;
-				position: absolute;
-				background: $label-default-BGcolor;
-				top: -50%;
-				right: -13px;
-				bottom: -50%;
-				margin: auto;
-				border-right: 1px solid #fff;
-				box-sizing: border-box;
-			}
-
-			&::before {
-				content: '';
-			    width: 14px;
-			    height: 14px;
-			    border: 1px solid #fff;
-			    background: #080c10;
-			    -webkit-border-radius: 25px;
-			    -moz-border-radius: 25px;
-			    -ms-border-radius: 25px;
-			    border-radius: 50%;
-			    position: absolute;
-			    right: -5px;
-			    z-index: 5;
-			    margin: auto;
-			    top: -50%;
-			    bottom: -50%;
-			    box-sizing: border-box;
-			    
-			    -webkit-transform: perspective(1px) translateZ(0);
-				transform: perspective(1px) translateZ(0);
-				-webkit-transition-duration: 0.2s;
-				transition-duration: 0.2s;
-				-webkit-transition-property: color, background-color;
-				transition-property: color, background-color;
-			}
 
 			.info-lbl {
-				width: 98px;
-				height: 48px;
-				font-size: 14px;
+				width: 100%;
+				height: 100%;
+				font-size: 10px;
 				font-weight: 600;
 				border-right: none;
-				background: $label-default-BGcolor;
-				border: 1.4px solid white;
+				border: 1px solid white;
 				font-family: $FontPTS_ss;
-    			@include border-radius(10px 0 0 10px);
     			box-sizing: border-box;
+    			text-align: center;
     			
     			> div {
     				font-size: 10px;
@@ -534,132 +505,6 @@
     			}
 			}
 
-			.before-lbl {
-				position: relative;
-				box-sizing: border-box;
-
-				&::before {
-					content: "";
-					border: 11px solid transparent;
-					border-left: 24px solid $label-default-BGcolor;
-					position: absolute;
-					z-index: 1;
-				    left: -2px;
-				    box-sizing: border-box;
-				}	
-
-				&::after {
-					content: "";
-					border: 12px solid transparent;
-					border-left: 25px solid #fff;
-					position: absolute;
-					z-index: 0;
-					box-sizing: border-box;
-				}
-				&.bottom {
-					&::before {
-						border-left: 24px solid $label-default-BGcolor;
-						bottom: 1px;
-					}	
-					&::after {
-						border-left: 25px solid #fff;
-						bottom: 0;
-					}
-				}
-				&.top {
-					&::before {
-						top: 1px;
-					}	
-					&::after {
-						top: 0;
-					}
-				}
-			}
-
-			&.bonus {
-				&::after, .info-lbl {
-					background: $label-bonus-BGcolor;
-				}
-				
-				.before-lbl {
-					&::before {
-						border-left: 24px solid $label-bonus-BGcolor;
-					}	
-					&.bottom {
-						&::before {
-							border-left: 24px solid $label-bonus-BGcolor;
-						}
-					}
-				}
-
-				&.big {
-					&::after, .info-lbl {
-						background: $label-bonusSecond-BGcolor;
-					}
-					
-					.before-lbl {
-						&::before {
-							border-left: 24px solid $label-bonusSecond-BGcolor;
-						}	
-						&.bottom {
-							&::before {
-								border-left: 24px solid $label-bonusSecond-BGcolor;
-							}
-						}
-					}
-				}
-			}
-			
-			&.recommend{
-				&::after, .info-lbl {
-					background: $label-recommend-BGcolor;
-				}
-				
-				.before-lbl {
-					&::before {
-						border-left: 24px solid $label-recommend-BGcolor;
-					}	
-					&.bottom {
-						&::before {
-							border-left: 24px solid $label-recommend-BGcolor;
-						}
-					}
-				}
-			}
-			
-			&.cheapest{
-				&::after, .info-lbl {
-					background: $label-cheapest-BGcolor;
-				}
-				
-				.before-lbl {
-					&::before {
-						border-left: 24px solid $label-cheapest-BGcolor;
-					}	
-					&.bottom {
-						&::before {
-							border-left: 24px solid $label-cheapest-BGcolor;
-						}
-					}
-				}
-			}
-			
-			&.profitable {
-				&::after, .info-lbl {
-					background: $label-profitable-BGcolor;
-				}
-				
-				.before-lbl {
-					&::before {
-						border-left: 24px solid $label-profitable-BGcolor;
-					}	
-					&.bottom {
-						&::before {
-							border-left: 24px solid $label-profitable-BGcolor;
-						}
-					}
-				}
-			}
 
 			&.recommend, 
 			&.profitable {
@@ -676,6 +521,19 @@
 			background: #fff;
 			color: #4d4d4d;
 			
+			.label-rateplan {
+				background: rgba(73, 243, 232, 0.7);
+				
+				.info-lbl {
+					border: none;
+				}
+			}
+			
+			.label-wrapper {
+				color: rgba(77,77,77,.7);
+				background: #e6e6e6;
+				border: 1px solid rgba(179, 179, 179, 0.7);
+			}
 
 			ul.list-bonus-steps {
 				opacity: 1;
@@ -691,38 +549,31 @@
 				}
 			} 
 
-			.update {
-				color: #CEA229;
-			}
-
 			.oldValue {
 				color: rgba(0,0,0,.54);
 				border-color: rgba(0,0,0,.54);
 			}
 
-			.label-rateplan::before {
-				background: #c4c4c4;
-				@include box-shadow(inset 0px 1px 3px 3px rgba(0,0,0,.2));
-			}
-			
 			.price {
+				color: #4d4d4d;
+
 				.priceValue {
 					color: #4d4d4d;
 				}
 
 				&.update {
 					.priceValue {
-						color: rgba(255,255,255,.42);
+						color: #4d4d4d;
 					}
 				}
 			}
 
 			.credits .item-price,
 			.discount .mini {
-				color: rgba(0,0,0, 0.54);
+				color: #4d4d4d;
 				
 				&.update{
-					color: rgba(0,0,0,.5);
+					color: #4d4d4d;
 				}
 			}
 		}
@@ -730,26 +581,10 @@
     }
 }
 
-.rateplanChoose,
-.rateplans,
-.rateplans .rateplan,
-.rateplans .rateplan .price,
-.rateplans .rateplan .label-rateplan,
-.rateplans .rateplan .label-rateplan .info-lbl,
-.rateplans .rateplan .credits,
-.rateplans .rateplan .discount {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-}
-
 .rateplanChoose, 
 .rateplans .rateplan .price,
-.rateplans .rateplan .credits,
 .rateplans .rateplan .label-rateplan,
-.rateplans .rateplan .label-rateplan .info-lbl,
-.rateplans .rateplan .discount {
+.rateplans .rateplan .label-rateplan .info-lbl {
 	-webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
@@ -757,10 +592,8 @@
 }
 
 .rateplans .rateplan .price,
-.rateplans .rateplan .credits,
 .rateplans .rateplan .label-rateplan,
-.rateplans .rateplan .label-rateplan .info-lbl,
-.rateplans .rateplan .discount {
+.rateplans .rateplan .label-rateplan .info-lbl {
 	-webkit-box-align: center;
 	-webkit-align-items: center;
 	-ms-flex-align: center;
@@ -768,9 +601,7 @@
 }
 
 .rateplans,
-.rateplans .rateplan .credits,
-.rateplans .rateplan .label-rateplan .info-lbl,
-.rateplans .rateplan .discount {
+.rateplans .rateplan .label-rateplan .info-lbl {
 	-webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;

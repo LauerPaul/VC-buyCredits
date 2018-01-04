@@ -1,6 +1,6 @@
 .rateplanDetails {
 	margin: 0;
-	width: 260px;
+	width: 280px;
 	padding: 25px;
 	background: #ffffff;
 	box-sizing: border-box;
@@ -24,14 +24,16 @@
 		
 	.infoTitleCredits {
     	width: 100%;
-		color: white;
+		color: $d_green;
     	padding: 7px;
 		font-size: 21px;
 	    line-height: 18px;
     	text-align: center;
-		background: $d_green;
     	text-transform: uppercase;
 		font-family: $FontPTS_ss;
+		margin-top: -25px;
+		height: 70px;
+		border-bottom: 1px solid $d_green;
 		
 		@media (max-width: 800px) {
 			@include border-radius(0px);
@@ -45,20 +47,25 @@
 
 	.detailsList {
 		.titleDetails {
-			color: $d_blue;
+			color: #4D4D4D;
 			text-transform: uppercase;
 			font-weight: bold;
 			font-size: 14px;
 			font-family: $FontPTS_ss;
-			margin-top: 22px;
-			margin-bottom: 20px;
+			margin-top: 30px;
+			margin-bottom: 10px;
+
+			.green {
+				color: $d_green;
+			}
 		}
 
 		@media (max-width: 800px) {
 			padding-left: 20px;
 		}
 		.detail {
-			margin-bottom: 8px;
+		   margin-top: 5px;
+		   position: relative;
 			
 			&:last-child {
 				margin-bottom: 0px;
@@ -67,20 +74,27 @@
 			p {
 				margin: 0px;
 				font-size: 14px;
-				font-weight: bold;
-				color: #737373;
+				color: #808080;
 				font-family: $FontPTS_ss;
-				line-height: 100%;
+		        line-height: 15px;
 				padding-bottom: 0px;
+				padding-left: 30px;
 			    word-spacing: -0.5px;
 
+				.strong {
+					font-weight: bold;
+				}
+
 				i {
-					top: 5px;
 					font-size: 22px;
 					color: $d_green;
-					line-height: 15px;
-					position: relative;
-					margin-right: 7px; 
+					height: 1px;
+					top: -50%;
+					bottom: -50%;
+					margin: auto;
+					line-height: 0;
+					position: absolute;
+					left: 0;
 				}
 			}
 

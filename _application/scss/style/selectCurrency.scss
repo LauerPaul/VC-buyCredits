@@ -11,6 +11,7 @@
 			font-size: 24px;
 			font-weight: bold;
 			color: #808080;
+		    line-height: 24px;
 		}
 
 		.wrapper-select {
@@ -35,7 +36,7 @@
 					letter-spacing: 0.5px;
 					line-height: 0px;
 					font-size: 12px;
-					color: #000000;
+					color: rgba(0,0,0,.54);
 					font-family: 'Open Sans', sans-serif;
 					font-weight: 600;
 					display: inline-block;
@@ -55,7 +56,16 @@
 				    margin-right: 15px;
 				}
 				.valute {
-					padding: 7px 15px;
+					padding: 7px 15px;	
+					text-decoration: none;
+					font-weight: bold;
+					color: rgba(255,255,255,.7);
+
+					&.active {
+						color: rgba(0,0,0,.54);
+						background: #FFC136;
+						@include border-radius(4px);
+					}
 				}
 			}		
 		}
