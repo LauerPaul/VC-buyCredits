@@ -2,26 +2,35 @@
 
 .rateplanChoose {
     height: auto;
-   margin-top: -1px;
+    margin-top: -1px;
     padding: 20px 20px 30px 96px;
-    background: $RatePlan_bg no-repeat center top;
-    background-size: cover;
     box-sizing: border-box;
 	-webkit-flex-wrap: wrap!important;
 	-ms-flex-wrap: wrap!important;
 	flex-wrap: wrap!important;
+	background-size: cover !important;
+	
+	@media (max-width: 999px) {
+		padding: 20px 0px 30px 75px;
+	}
 	
 	@media (max-width: 800px) {
 		padding: 0px;
-		margin-left: 13px;
-		margin-right: 13px;
-	}
-
-	@media (max-width: 460px) {
 		margin-left: 0px;
 		margin-right: 0px;
+		max-width: 100%;
+		overflow: hidden;
 	}
 
+	@media (min-width: 361px) {
+    	background: $RatePlan_bg no-repeat center top;
+   		background-size: cover !important;
+	}
+	
+	@media (max-width: 360px) {
+    	background: url(/img/BuyCreditsPage/new/Mobile-Plans-bg.png)  no-repeat center top;
+   		background-size: cover !important;
+	}
 }
 
 .rateplans {
@@ -31,9 +40,10 @@
 	}
 	@media (max-width: 800px) {
 		width: 100%;
+	    padding-top: 3px;
 		
 		&.close {
-			display: none;
+			display: none !important;
 		}
 	}
     
@@ -47,10 +57,10 @@
     	color: #ffffff;
     	cursor: pointer;
     	position: relative;
-    	border: 1px solid #fff;
+    	border: 1px solid rgba(255,255,255,.24);
     	border-bottom: 0px;
     	padding: 7px 15px 6px 0px;
-    	background: rgba(255,255,255,.24);
+    	background: rgba(255,255,255,.12);
     	border-right: none;
     	box-sizing: border-box;
 
@@ -68,13 +78,25 @@
 		transition-property: color, background-color;
 
 		&:last-child {
-			border-bottom: 1px solid #fff;
+			border-bottom: 1px solid rgba(255,255,255,.24);
+			
+			@media (max-width: 800px) {
+				border-bottom: none;
+			}
 		}
 		
 
-		@media (max-width: 460px) {
-		    padding-right: 60px !important;
-		    padding-left: 15px !important;
+		@media (max-width: 999px) {
+		    -webkit-flex-wrap: wrap!important;
+		    -ms-flex-wrap: wrap!important;
+		    flex-wrap: wrap!important;
+			padding-left: 30px;
+			padding-right: 40px;
+			padding-top: 4px;
+			padding-bottom: 4px;
+		}
+		@media (max-width: 500px) {
+			height: 50px;
 		}
 
 
@@ -112,20 +134,24 @@
 			@media (max-width: 800px) {
     			margin-left: 0px;
 			    margin-right: 23px;
+			    
 			}
 			@media (max-width: 460px) {
 				display: none;
 			}
 		}
-		&.activeRateplan, &:hover {
-			.percent-box {
-				color: rgba(0,0,0,.7);
-			}
-			.promo-label {
-				color: #21b7aa;
+		
+		@media (min-width: 801px) {
+			&.activeRateplan, &:hover {
+				.percent-box {
+					color: rgba(0,0,0,.7);
+				}
+				.promo-label {
+					color: #27ddcd;
+				}
 			}
 		}
-		
+			
 		ul.list-bonus-steps {
 		    width: calc(100% - 330px);
 		    list-style: none;
@@ -144,7 +170,7 @@
 			    text-align: center;
 			    height: 25px;
 			    padding: 4px 0px;
-			    color: #21B7AA;
+			    color: #27ddcd;
 			    float: left;
 				position: relative;
 				padding-left: 10px;
@@ -217,7 +243,7 @@
 				}
 
 			    &.checked {
-			    	background: #21B7AA;
+			    	background: #27ddcd;
 					color: #fff;
 					height: 30px;
 					position: relative;
@@ -226,7 +252,7 @@
 			    	
 			    	&::after {
 		    		    border: 15px solid transparent;
-						border-left: 9px solid #21B7AA;
+						border-left: 9px solid #27ddcd;
 					}
 				    &::before {
 						border-left: 12px solid rgb(35, 38, 38);
@@ -239,11 +265,10 @@
 		}
 		
 		@media (max-width: 800px) {
-			background: transparent;
-			border-radius: 0px;
+			margin: 3px 0 !important;
 			border: none;
-			margin-bottom: 0px;
-			border-bottom: 1px solid rgba(255,255,255,0.7);
+			background: rgba(255,255,255,.15);
+			height: 54px;
 		
 			.mobile-label {
 				text-align: center;
@@ -275,43 +300,35 @@
 				height: 100%;
 				position: absolute;
 				width: 20px;
-				right: 8px;
+				right:  0;
 			    top: 0;
 			    
-				@media (max-width: 460px) {
-					right: -5px;
-			    }
-				
 				&::after {
 					content: '';
-					width: 8px;
-					height: 13px;
-					background: url(/img/BuyCreditsPage/rateplanArrow.png) no-repeat center;
+					width: 9px;
+					height: 80%;
+					background: url(/img/BuyCreditsPage/new/after.png) no-repeat center;
 					position: absolute;
 					top: -50%;
 					bottom: -50%;
-					right:12px;
+					right:0;
 					margin: auto;
 				}
 			}
-
-			&.activeRateplan,
-			&:hover {
-				border-color: #c5c8cb;
-			    border-top: 1px solid #c5c8cb;
-			    margin-top: -1px;
-			    margin-bottom: 1px;
-			    
-				.mobile-arrow {
-					&::after {
-						background: url(/img/BuyCreditsPage/rateplanArrowHover.png) no-repeat center;
-					}
+	
+			@media (min-width: 801px) {
+				&.activeRateplan,
+				&:hover {
+					border-color: #c5c8cb;
+				    border-top: 1px solid #c5c8cb;
+				    margin-top: -1px;
+				    margin-bottom: 1px;
 				}
 			}
 		}
 
 		@media (max-width: 500px) {
-			padding: 7px 0px 6px 0px;
+		    padding: 4px 25px;
 		}
 
 		&:last-child {
@@ -323,7 +340,7 @@
 		}
 
 		.green {
-			color: #21B7AA;
+			color: #27ddcd;
 		}
 
 		.label-wrapper {
@@ -334,13 +351,28 @@
 			border: 1px solid rgba(0,0,0,.4);
 			width: 100%;
 			margin-top: 2px;
+			
+			@media (max-width: 999px) {
+				font-size: 10px;
+			    height: 17px;
+
+				&:not(.mobile) {
+					display: none !important;
+				}
+			}
+			
+			@media (min-width: 1000px) {
+				&.mobile {
+					display: none !important;
+				}
+			}
 		}
 
 		.update {
 			position: relative;
 			
 			.oldValue {
-				color: rgba(255,255,255,.5);
+				color: rgba(255,255,255,.38);
 				border-bottom: 1px solid rgba(255,255,255,.5);
 				line-height: 0;
 				height: 1px;
@@ -359,10 +391,16 @@
 			
 			@media (max-width: 999px) {
 				width: 75px;
+				font-size: 17px;
+			    line-height: 16px;
 			}
 
-			@media (max-width: 500px) {
-				font-size: 18px;
+			@media (max-width: 800px) {
+				width: 100px;
+				-webkit-box-pack: start!important;
+			    -webkit-justify-content: start!important;
+			    -ms-flex-pack: start!important;
+			    justify-content: start!important;
 			}
 			
 			.priceValue {
@@ -378,6 +416,8 @@
 				transition-property: color, background-color;
 			}
 			@media (max-width: 500px) {
+				width: 65px;
+				
 				.oldValue {
 					right: auto;
 					left: 40%;
@@ -406,6 +446,16 @@
 
 		.second-wrapper-tarif {
 			width: calc(100% - 136px);
+			
+			@media (max-width: 999px) {
+				width: calc(100% - 75px);
+			}
+			@media (max-width: 800px) {
+				width: calc(100% - 100px);
+			}
+			@media (max-width: 500px) {
+				width: calc(100% - 65px);
+			}
 		}
 
 		.credits {
@@ -416,21 +466,39 @@
 			font-family: $FontPTS_ss;
 			
 			@media (max-width: 999px) {
-				width: 55%;
+		    	width: calc(100% - 120px);
+				-webkit-flex-wrap: wrap!important;
+				-ms-flex-wrap: wrap!important;
+				flex-wrap: wrap!important;
+				-webkit-box-pack: center!important;
+				-webkit-justify-content: center!important;
+				-ms-flex-pack: center!important;
+				justify-content: center!important;
+				-webkit-align-content: center!important;
+				-ms-flex-line-pack: center!important;
+				align-content: center!important;
 			}
 			@media (max-width: 800px) {
 				margin-right: -2px;
 			}
 
-			@media (max-width: 460px) {
-				margin-right: 15px;
+			@media (max-width: 500px) {
 				font-size: 12px;
+				width: calc(100% - 73px);
+				padding-right: 10px;
 			}
 			
 			.creditsValue {
 				padding-right: 10px;
 				box-sizing: border-box;
 			    width: 160px;
+			    
+				@media (max-width: 999px) {
+					width: 100%;
+					padding: 0px;
+					text-align: center;
+				}
+
 			}
 
 			.item-price {
@@ -441,6 +509,13 @@
 				&.update {
 					color: rgba(255,255,255,.98);
 				    width: calc(100% - 160px);
+				    
+					@media (max-width: 999px) {
+						width: 100%;
+						font-size: 11px;
+						text-align: center;
+					}
+
 				}
 			}
 		}
@@ -451,17 +526,52 @@
 			font-weight: 400;
 			line-height: 14px;
 			font-family: $FontPTS_ss;
+			
+			@media (max-width: 999px) {
+				width: 100px;
+				font-size: 11px;
+				font-weight: 400;
+				padding-left: 5px;
+			}
+			@media (max-width: 800px) {
+				-webkit-box-pack: end!important;
+				-webkit-justify-content: end!important;
+				-ms-flex-pack: end!important;
+				justify-content: end!important;
+			    width: 122px;
+			    padding-left: 10px;
+			    padding-right: 10px;
+			    
+			    .discountValue {
+					display: -webkit-box!important;
+					display: -webkit-flex!important;
+					display: -ms-flexbox!important;
+					display: flex!important;
+					-webkit-box-align: center!important;
+					-webkit-align-items: center!important;
+					-ms-flex-align: center!important;
+					align-items: center!important;
+					text-align: center;
+					-webkit-flex-wrap: wrap!important;
+				    -ms-flex-wrap: wrap!important;
+				    flex-wrap: wrap!important;
+					-webkit-box-pack: center!important;
+					-webkit-justify-content: center!important;
+					-ms-flex-pack: center!important;
+					justify-content: center!important;
+					
+					.oldValue {
+					    margin-right: 2px;
+					}
+			    }
+			}
 
 			@media (max-width: 500px) {
-				width: 90px;
-			}
-			@media (max-width: 460px) {
-				width: 70px;
-				margin-right: 20px;
+				width: 75px;
 				
-				&.desk-block {
-					display: none !important;
-				}
+				// &.desk-block {
+				// 	display: none !important;
+				// }
 			}
 
 			.mini {
@@ -481,9 +591,22 @@
 	     	top: -50%;
 			bottom: -50%; 
 			margin: auto;
-	     	
+			
+			@media (min-width: 801px) {
+				.info-lbl.mobile {
+					display: none !important;
+				}
+	     	}
 			@media (max-width: 800px) {
-				display: none !important;
+				width: auto;
+				height: auto;
+				padding: 0;
+				margin: 0;
+				margin-bottom: 2px;
+				right: 0;
+				position: relative;
+				top: 0;
+				bottom: 0;
 			}
 
 			.info-lbl {
@@ -492,10 +615,24 @@
 				font-size: 10px;
 				font-weight: 600;
 				border-right: none;
-				border: 1px solid white;
+				border: 1px solid rgba(255,255,255,.24);
+				border-right: none;
 				font-family: $FontPTS_ss;
     			box-sizing: border-box;
     			text-align: center;
+			    padding: 0px 5px;
+	
+				@media (max-width: 800px) {
+					&:not(.mobile) {
+						display: none !important;
+					}
+
+					background: rgba(255,255,255,.2);
+					border: 1px solid rgba(255,255,255,.1);
+					padding: 1px 4px;
+					line-height: 7px;
+					font-size: 8px;
+				}
     			
     			> div {
     				font-size: 10px;
@@ -516,64 +653,77 @@
 
 		}
 	
-		&.activeRateplan,
-		&:hover {
-			background: #fff;
-			color: #4d4d4d;
-			
-			.label-rateplan {
-				background: rgba(73, 243, 232, 0.7);
-				
-				.info-lbl {
-					border: none;
-				}
-			}
-			
-			.label-wrapper {
-				color: rgba(77,77,77,.7);
-				background: #e6e6e6;
-				border: 1px solid rgba(179, 179, 179, 0.7);
-			}
-
-			ul.list-bonus-steps {
-				opacity: 1;
-				
-				li {
-					&::before {
-						border-left: 11px solid $white;	
-					}
-
-					&.checked::before {
-					   border-left: 12px solid #fff;
-					}
-				}
-			} 
-
-			.oldValue {
-				color: rgba(0,0,0,.54);
-				border-color: rgba(0,0,0,.54);
-			}
-
-			.price {
+		@media (min-width: 801px){
+			&.activeRateplan,
+			&:hover {
+				background: #fff;
 				color: #4d4d4d;
+				
+				.green {
+					color: #21b7aa;
+				}
+				
+				.label-rateplan {
+					@media(min-width: 801px){
+						background: rgba(73, 243, 232, 0.5);
+					}
 
-				.priceValue {
-					color: #4d4d4d;
+					.info-lbl {
+						border: none;
+						
+						@media(max-width: 800px){
+							background: rgba(0,0,0,.6);
+							border-color: rgba(0,0,0,.6);
+						}
+					}
+				}
+				
+				.label-wrapper {
+					color: rgba(77,77,77,.7);
+					background: #e6e6e6;
+					border: 1px solid rgba(179, 179, 179, 0.7);
 				}
 
-				&.update {
+				ul.list-bonus-steps {
+					opacity: 1;
+					
+					li {
+						&::before {
+							border-left: 11px solid $white;	
+						}
+
+						&.checked::before {
+						   border-left: 12px solid #fff;
+						}
+					}
+				} 
+
+				.oldValue {
+					color: rgba(0,0,0,.38);
+					border-color: rgba(0,0,0,.54);
+				}
+
+				.price {
+					color: #4d4d4d;
+
 					.priceValue {
 						color: #4d4d4d;
 					}
-				}
-			}
 
-			.credits .item-price,
-			.discount .mini {
-				color: #4d4d4d;
-				
-				&.update{
+					&.update {
+						.priceValue {
+							color: #4d4d4d;
+						}
+					}
+				}
+
+				.credits .item-price,
+				.discount .mini {
 					color: #4d4d4d;
+					
+					&.update{
+						color: #4d4d4d;
+					}
 				}
 			}
 		}
@@ -600,7 +750,6 @@
 	align-items: center;
 }
 
-.rateplans,
 .rateplans .rateplan .label-rateplan .info-lbl {
 	-webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -623,22 +772,22 @@
 		&.mobile {
 			display: block;
 		    text-align: center;
-			margin: 20px 12px 0;
-			border-top: 1px solid #e6e6e6;
+			margin: 50px 12px 10px;
 			width: calc(100% - 24px);
 		
 			.titleInfoRateplan {
-				font-size: 15px;
+				font-size: 1.3rem;
 				color: #464646;
-				margin-bottom: 4px;
+				margin-bottom: 20px;
+				margin-top: 10px;
 			}
 			.pull-right {
-				color: #c1c1c1;
+				color: #fff;
 				font-size: 12px;
 				margin-top: 4px;
 				
 				a {
-					color: #464646;
+					color: #fff;
 					
 					&:hover {
 						color: #464646 !important;
@@ -649,24 +798,45 @@
 	}
 	
 	.titleInfoRateplan {
-		color: #ffffff;
-		font-size: 24px;
-		margin-top: 22px;
+		color: #464646;
+		font-size: 21.9px;
+		margin-top: 70px;
 		margin-bottom: 12px;
-		font-family: $FontPTS_ss;
-	}
-
-	.pull-right {
-		margin-top: 12px;
-		font-size: 16px;
-		font-family: $FontPTS_ss;
-		color: rgba(255, 255, 255, 0.54);
+		text-transform: uppercase;
+		font-weight: bold;
 		
-		a {
-			color: #ffffff;
+		@media (max-width: 999px) {
+			font-size: 18.9px;
+		}
+		@media (max-width: 800px) {
+			margin-top: 20px;
+			color: white;
+		}
+		
+		>img {
+			max-width: 100%;
+			margin-top: 10px;
+			display: inline-block;
+		}
+	
+		.powered {
+			margin-top: 7px;
+			font-size: 16px;
+			font-family: $FontPTS_ss;
+			color: #464646;
+			display: inline-block;
+			text-transform: none;
+			font-weight: normal;
 			
-			&:hover {
-				color: #ffffff !important;
+			a {
+				color: #56DBC5;
+				text-decoration: none;
+				font-weight: bold;
+				
+				&:hover {
+					text-decoration: underline;
+					color: #56DBC5 !important;
+				}
 			}
 		}
 	}
@@ -682,5 +852,35 @@
 			padding: 0px;
 		}
 
+	}
+}
+
+.last-section-info {
+	padding-top: 40px;
+	padding-bottom: 48px;
+	max-width: 680px;
+    margin: 0 auto;
+
+	.item {
+		display: inline-block;
+	    max-width: 125px;
+	    text-align: center;
+	    margin-top: 15px;
+		
+		span.title {
+		    display: inline-block;
+		    margin-top: 30px;
+		    color: #4D4D4D;
+		    font-size: 18px;
+		    font-weight: bold;
+		    margin-bottom: 10px;
+		}
+
+		.text {
+			display: inline-block;
+		    text-align: center;
+		    color: #808080;
+		    margin-bottom: 15px;
+		}
 	}
 }

@@ -1,0 +1,70 @@
+@import 'top_panel';
+/* Header */
+@import 'chat_btn_header';
+.header {
+	display: block;
+	width: 1024px;
+    height: 106px;
+    border-bottom: 1px solid #d4d4cd;
+    position: relative;
+    
+    @media (max-width: 999px) and (min-width: 801px){
+		height: 90px;
+    }
+    
+    .logo {
+	    width: 116px;
+	    height: 86px;
+	    margin: 0 0 0 40px;
+	}
+
+	.nav-menu {
+	    float: left;
+	    margin: 0;
+	    
+	    ul {
+	    	li {
+	    		&::after {
+	    			content: '';
+				    position: absolute;
+				    height: 16px;
+				    padding-right: 23px;
+				    margin-top: 4px
+	    		}
+				
+				&:last-child {
+					&::after {
+						display: none;
+					}					
+				}
+
+	    		a {
+	    			display: inline-block;
+				    font-size: 16px;
+				    text-transform: uppercase;
+				    padding: 1px 0;
+				    border-bottom: 1px solid #333;
+				    color: #333;
+				    position: relative;
+				    
+	    			span {
+					    display: block;
+					    position: absolute;
+					    color: #fff;
+					    background: #00af9b;
+					    font-size: 10px;
+					    font-weight: 400;
+					    line-height: 16px;
+					    height: 16px;
+					    padding: 0 5px;
+					    -webkit-border-radius: 8px;
+					    border-radius: 8px;
+					    right: -5px;
+					    top: -14px;
+					    white-space: nowrap;
+	    			}
+	    		}
+	    	}
+	    }
+	}
+}

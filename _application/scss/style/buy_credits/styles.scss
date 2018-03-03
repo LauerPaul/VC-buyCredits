@@ -157,24 +157,74 @@ strong {
 	}
 
 	.mobile-title-not-hide {
-		max-width: 100% !important;
-		text-decoration: none !important;
-		float: none !important;
 		font-size: 16px;
-		text-transform: uppercase;
-		padding-left: 13px;
-		padding-top: 14px;
-		border-top: 2px solid #f3f3f3;
-	    display: block !important;
 	    position: relative;
 	    cursor: pointer;
 	    font-weight: bold;
+    	text-align: right;
+	    
+	    ul {
+	    	display: none;
+	    }
+
+	    .curent {
+	    	color: #16488f;
+	    	position: relative;
+			font-size: 21px;
+			line-height: 22px;
+	    	
+	    	&::after {
+				content: url(/img/arrow_lng.png?1511964404);
+				position: absolute;
+				display: block;
+				width: 11px;
+				height: 30px;
+				top: -50%;
+				bottom: -50%;
+				margin: auto;
+				left: -20px;
+				opacity: .5;
+				transition: opacity .4s;
+			}
+
+	    }
+
+	    &.open {
+	    	ul {
+				display: block;
+				position: absolute;
+				top: 100%;
+				right: 10px;
+				background: #fff;
+				z-index: 100;
+				list-style: none;
+				padding: 4px 5px;
+				border: 1px solid rgba(0,0,0,.4);
+				
+				li {
+					padding: 5px 20px;
+					
+					a {
+						color: #16488f;
+						text-decoration: none;
+					}
+					span.valute.active {
+					    background: rgba(0,0,0,.1);
+					    display: block;
+					    margin-left: -25px;
+					    margin-right: -25px;
+					    text-align: center;
+					    margin-top: -9px;
+					    margin-bottom: -4px;
+					    padding: 5px;
+					    color: rgba(0,0,0,.6);
+					}
+				}
+	    	}
+	    }
 	}
 	.mobile-back {
-		width: 105px;
 		height: 35px;
-		border: 2px solid $d_blue;
-		@include border-radius(4px);
 		cursor: pointer;
 		outline: none;
 		font-weight: bold;
@@ -183,7 +233,12 @@ strong {
 		margin-right: 13px;
 		display: inline-block;
 		background: transparent;
-		
+	    float: right;
+	    margin-top: 17px;
+	    border: none;
+	    padding: 0px;
+	    width: auto;
+			
 		@media (max-width: 460px) {
 			font-size: 14px;
 		}
@@ -208,57 +263,6 @@ strong {
 		margin-bottom: 25px !important;
 	}
 }
-
-.way-block {
-	border: 2px solid #21b7aa;
-	padding: 20px;
-	font-family: "PT Sans",sans-serif;
-	
-	label {
-		display: block;
-		margin-bottom: 5px;
-		font-weight: bold;
-		vertical-align: middle;
-		cursor: pointer;
-	}
-	p {
-		color: #737373;
-		margin-left: 15px;
-		margin-bottom: 20px;
-		line-height: 14px;
-	}
-	.tag {
-		background: blue;
-		color: white;
-		padding: 1px 5px;
-		display: inline-block;
-		border-radius: 4px;
-		font-size: 50%;
-		vertical-align: middle;
-	}
-	.buyNow {
-		margin-top: 0;
-	}
-}
-
-.changeCurrency{
-	width: 400px;
-	max-width: 100%;
-    text-align: center;
-	margin: 10px auto;
-}
-.changeCurrency .currBlItem{
-	display: inline-block;
-	vertical-align: middle;
-}
-.changeCurrency .currBlItem img{
-	width: 26px;
-}
-.changeCurrency .currBlItem .currBlText{
-	color: #19488e;
-    font-weight: 700;
-}
-
 
 /*Collapse*/
 $icomoon-font-path: "/css/buy_credits/min/iconV" !default;
@@ -285,6 +289,11 @@ $icomoon-font-path: "/css/buy_credits/min/iconV" !default;
 			font-size: 24px;
 			cursor: pointer;
 		    line-height: 24px;
+		    
+			@media (max-width: 999px) {
+				font-size: 21px;
+				padding: 13px 0;
+			}
 			
 			&::after {
 				content: "\e901";
@@ -319,5 +328,14 @@ $icomoon-font-path: "/css/buy_credits/min/iconV" !default;
 				}
 			}
 		}
+	}
+}
+
+
+
+
+@media (max-width: 800px) {
+	.m-hide {
+		display: none;
 	}
 }

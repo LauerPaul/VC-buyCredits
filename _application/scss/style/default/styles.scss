@@ -1,0 +1,14 @@
+/* styles */
+@import 'bootstrap';
+
+body {
+    height: 100%;
+    color: #464646;
+
+    @media (min-width: 801px) {
+	    background-image: url(/i/bg-body-bottom.png), url(/i/bg-body-top.png);
+	    background-attachment: fixed;
+	    background-position: center top;
+	    background-size: 100%;
+    }
+}

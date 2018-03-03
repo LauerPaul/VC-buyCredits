@@ -12,10 +12,10 @@
 .promo-section-buyPage {
 	overflow: hidden;
 	position: relative;
-	padding: 12px 3px 15px 3px;
+	// padding: 12px 3px 15px 3px;
 
 	@media (max-width: 680px) {
-		padding: 12px 0px 0px;
+		// padding: 12px 0px 0px;
 	}
 	
 	a {
@@ -23,14 +23,14 @@
 		width: 100%;
 		outline: none;
 		display: block;
-		max-width: 684px;
+		max-width: calc(100% - 285px);
 		text-decoration: none;
 		
 		@media (max-width: 999px) and (min-width: 681px){
-			max-width: 475px;
+			// max-width: 475px;
 		}
 		@media (max-width: 680px) {
-			max-width: 100%;
+			// max-width: 100%;
 		}
 	}
 
@@ -38,8 +38,7 @@
 		width: 100%;
 		height: 220px;
 		display: flex;
-		max-width: 684px;
-		margin-bottom: 15px;
+		// max-width: 684px;
 		box-sizing: border-box;
 		flex-direction: column;
 		justify-content: center;
@@ -47,6 +46,7 @@
 		-webkit-flex-direction: column; /* Safari */
 		-webkit-justify-content: center; /* Safari */
 		background: $PromoBanner_bg center;
+	    background-size: cover;
 		cursor: default;
 		
 		@media (max-width: 680px) {

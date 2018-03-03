@@ -1,0 +1,159 @@
+.search.abnner-wrapper-horizontal img {
+    max-width: 100%;
+    margin-top: -12px;
+    position: relative;
+    z-index: 1;
+}
+.search.abnner-wrapper-horizontal {
+    overflow: initial;
+}
+a#logo_site img {
+    max-width: 100%;
+    margin-top: -15px;
+}
+
+.gift-discount {
+    background: url(/img/promo/st_valentine/heart.png) no-repeat center;
+    width: 39px;
+    font-size: 12px !important;
+    height: 33px;
+    background-color: transparent !important;
+    font-weight: bold !important;
+    line-height: 28px;
+    text-align: center;
+    right: -10px !important;
+    top: -10px !important;
+    color: white !important;
+}
+
+@media (max-width: 800px){
+	.site-wrapper .header .logo a img {
+	    max-height: none !important;
+	}
+}
+
+.rateplans .rateplan.valentines_day_2018 {
+	background-image: url(/img/promo/st_valentine/passive-bg.png);
+	background-color: #FF1142;
+}
+.rateplans .rateplan.valentines_day_2018 .price {
+	font-size: 36px;
+	color: rgba(253, 250,23,0.7);
+	@media (max-width: 800px){
+		margin-left: -5px;
+    	margin-right: 5px;
+	}
+}
+.rateplans .rateplan.valentines_day_2018 .price .priceValue {
+	color: #FDFA17;
+}
+.rateplans .rateplan.valentines_day_2018 .discount {
+	font-size: 36px;	
+	color: #FDFA17;
+	font-weight: bold;
+	
+	@media (max-width: 999px) {
+		font-size: 30px;
+	}
+	@media (max-width: 800px){
+		margin-left: -5px;
+    	margin-right: 5px;
+	}
+}
+
+.rateplans .rateplan.valentines_day_2018.activeRateplan,
+.rateplans .rateplan.valentines_day_2018:hover {
+	background-image: url(/img/promo/st_valentine/active-bg.png);
+	background-color: white;
+}
+.rateplans .rateplan.valentines_day_2018.activeRateplan .price,
+.rateplans .rateplan.valentines_day_2018:hover .price {
+	font-size: 36px;
+	color: rgba(255,17,66,0.7);
+	
+	@media (max-width: 999px) {
+		font-size: 30px;
+	}
+}
+.rateplans .rateplan.valentines_day_2018.activeRateplan .price .priceValue,
+.rateplans .rateplan.valentines_day_2018:hover .price .priceValue,
+.rateplans .rateplan.valentines_day_2018.activeRateplan .credits,
+.rateplans .rateplan.valentines_day_2018:hover .credits,
+.rateplans .rateplan.valentines_day_2018.activeRateplan .discount,
+.rateplans .rateplan.valentines_day_2018:hover .discount,
+.rateplans .rateplan.valentines_day_2018.activeRateplan .mobile,
+.rateplans .rateplan.valentines_day_2018:hover .mobile {
+	color: rgba(255,17,66,1);
+}
+
+.rateplans .rateplan.valentines_day_2018 .item-price img {
+    margin-left: -15px;
+    
+	@media (max-width: 999px) and (min-width: 801px) {
+		max-width: 100%;
+		max-height: 34px;
+		margin: 0px;
+		margin-top: 5px;
+	}
+
+	@media (max-width: 800px){
+		display: none !important;
+	}
+}
+.rateplans .rateplan.valentines_day_2018 .item-price .mobile {
+	@media (min-width: 801px){
+		display: none !important;
+	}
+}
+.rateplans .rateplan.valentines_day_2018 .item-price img.active {
+	display: none;
+}
+.rateplans .rateplan.valentines_day_2018.activeRateplan .item-price img:not(.active),
+.rateplans .rateplan.valentines_day_2018:hover .item-price img:not(.active) {
+	display: none;
+}
+.rateplans .rateplan.valentines_day_2018.activeRateplan .item-price img.active,
+.rateplans .rateplan.valentines_day_2018:hover .item-price img.active {
+	display: inline-block;
+}
+
+.rateplans .rateplan.valentines_day_2018 .label-rateplan .info-lbl {
+	background: rgba(255,17,66,.5);
+	border-color: rgb(167, 43, 68);
+	
+	@media (max-width: 800px){
+		display: none !important;
+	}
+}
+
+.rateplans .rateplan.valentines_day_2018.activeRateplan .label-rateplan .info-lbl,
+.rateplans .rateplan.valentines_day_2018:hover .label-rateplan .info-lbl{
+	background: rgba(255,17,66,1);
+}
+
+
+.rateplanDetails.valentine .infoTitleCredits {
+	color: rgba(255,17,66,1) !important;
+	border-bottom: 1px solid transparent !important;
+	position: relative;
+
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: -25px;
+		left: -50%;
+		right: -50%;
+		width: 243px;
+		height: 40px;
+		max-width: 100%;
+		background: url(/img/promo/st_valentine/arrow.png);
+	    background-size: contain;
+		margin: auto;
+		
+		@media (max-width: 999px) and (min-width: 801px) {
+		    height: 33px;
+	        bottom: -20px;
+		}
+	}
+}

@@ -1,0 +1,47 @@
+/* Top panel */
+#top-panel {
+	.header {
+		margin: 0 auto;
+		height: 50px;
+        position: relative;
+
+		@media (min-width: 1000px){
+			width: 1024px;
+		}
+	    @media (max-width: 999px) and (min-width: 801px){
+			width: 100%;
+	    }
+		
+		.logo {
+		    width: 156px;
+	        height: auto;
+		}
+
+		.nav-menu {
+			@media (max-width:999px){
+				font-size: 13px;
+				line-height: 15px;
+				
+				@media (min-width: 801px) {
+					width: 95%;
+				    text-align: center;
+				}
+			}
+
+			ul {
+				li {
+					a {
+					    @media (max-width: 999px) and (min-width: 801px){
+							font-size: 13px;
+					    }
+
+						span {
+					    	top: -12px;
+						}
+					} 
+				}
+			}
+
+		}
+	}
+}

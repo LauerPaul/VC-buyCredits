@@ -7,18 +7,18 @@ front-end dev. Pavel Ugrynovych (Lauer - lauer.com.ua)
 @import "hover";
 
 /* flipClOck */
-@import "style/flipclock";
+@import "style/buy_credits/flipclock";
 /* flipClOck end */
 
 @import "include/font";
-@import "style/styles";
-// @import "style/banner-section";
-@import "style/hideBlock";
-@import "style/ratePlans";
-@import "style/rateplanDetails";
-@import "style/how-to-spend";
-@import "style/selectCurrency";
-// @import "style/promoAddCretits";
+@import "style/buy_credits/styles";
+@import "style/buy_credits/banner-section";
+@import "style/buy_credits/hideBlock";
+@import "style/buy_credits/ratePlans";
+@import "style/buy_credits/rateplanDetails";
+@import "style/buy_credits/how-to-spend";
+@import "style/buy_credits/selectCurrency";
+// @import "style/buy_credits/promoAddCretits";
 
 
-// @import "style/remove";
+// @import "style/buy_credits/remove";

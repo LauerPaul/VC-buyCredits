@@ -1,0 +1,401 @@
+@charset "UTF-8";
+/* ---------------------------------------
+Copyright 2018©VictoriyaClub.com
+front-end dev. Pavel Ugrynovych (Lauer)
+mobile vers. site
+---------------------------------------*/
+@media (min-width: 801px) {
+  .actions-button-mobile {
+    display: none !important; }
+  .id-for-title.mobile {
+    display: none !important; }
+  .credits-bl.mobile {
+    display: none !important; } }
+
+@media (max-width: 800px) {
+  body {
+    background: none;
+    padding-top: 65px; }
+    body #top-panel {
+      display: none !important; }
+  .site-wrapper {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%; }
+    .site-wrapper .agency-page,
+    .site-wrapper .index-girls-list-wrapper {
+      width: 100%; }
+  .site-wrapper {
+    /* Top panel */
+    /* HEADER */
+    /* Userpanel */
+    /* Footer */ }
+    .site-wrapper .header {
+      width: 100%;
+      height: 64px;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      display: -webkit-box !important;
+      display: -webkit-flex !important;
+      display: -ms-flexbox !important;
+      display: flex !important;
+      -webkit-box-align: center !important;
+      -webkit-align-items: center !important;
+      -ms-flex-align: center !important;
+      align-items: center !important;
+      background: white;
+      z-index: 100;
+      -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.24);
+      -moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.24);
+      box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.24);
+      -webkit-transition: box-shadow 0.4s;
+      -moz-transition: box-shadow 0.4s;
+      -ms-transition: box-shadow 0.4s;
+      -o-transition: box-shadow 0.4s;
+      transition: box-shadow 0.4s; }
+      .site-wrapper .header.open-mobile {
+        -webkit-box-shadow: 0px 0px 12px 0px transparent;
+        -moz-box-shadow: 0px 0px 12px 0px transparent;
+        box-shadow: 0px 0px 12px 0px transparent; }
+        .site-wrapper .header.open-mobile .mobile-menu::after {
+          background: url(/img/mobile_ver/clear.svg) no-repeat center; }
+        .site-wrapper .header.open-mobile ~ .nav-menu.mobile {
+          top: 64px;
+          background: white;
+          left: 0;
+          right: 0;
+          margin: 0;
+          width: 100%;
+          z-index: 7;
+          border-top: 1px solid rgba(0, 0, 0, 0.06);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+          box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.24); }
+      .site-wrapper .header ~ .nav-menu.mobile {
+        position: fixed;
+        display: block !important;
+        top: -260px;
+        padding-top: 18px;
+        -webkit-transition: top 0.4s;
+        -moz-transition: top 0.4s;
+        -ms-transition: top 0.4s;
+        -o-transition: top 0.4s;
+        transition: top 0.4s; }
+        .site-wrapper .header ~ .nav-menu.mobile ul {
+          padding-left: 26px;
+          list-style: none; }
+          .site-wrapper .header ~ .nav-menu.mobile ul li::before {
+            content: '';
+            width: 4px;
+            height: 4px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 26px;
+            background: #1d69ba;
+            opacity: 0.24; }
+          .site-wrapper .header ~ .nav-menu.mobile ul li a {
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            line-height: 32px; }
+            .site-wrapper .header ~ .nav-menu.mobile ul li a > span {
+              background: #21b7a2;
+              color: white;
+              padding: 3px 10px;
+              font-size: 12px;
+              position: relative;
+              line-height: 12px;
+              top: -2px;
+              margin-left: 8px;
+              border-radius: 24px; }
+          .site-wrapper .header ~ .nav-menu.mobile ul li.active::before {
+            opacity: 1; }
+          .site-wrapper .header ~ .nav-menu.mobile ul li.active a {
+            color: #1d69ba; }
+        .site-wrapper .header ~ .nav-menu.mobile .footer-mobile-menu {
+          color: rgba(0, 0, 0, 0.38);
+          font-size: 12px;
+          height: 42px;
+          margin-top: 18px;
+          border-top: 1px solid rgba(0, 0, 0, 0.06);
+          font-weight: bold; }
+      .site-wrapper .header .nav-menu:not(.mobile) {
+        display: none !important; }
+      .site-wrapper .header .mobile-menu {
+        display: -webkit-box !important;
+        display: -webkit-flex !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        width: 112px;
+        height: 32px;
+        position: relative;
+        margin-left: 16px;
+        margin-right: 6px;
+        border: 1px solid #21b7a2;
+        border-radius: 4px;
+        color: #21b7a2;
+        font-weight: bold;
+        font-size: 14px;
+        padding-left: 40px;
+        box-sizing: border-box; }
+        .site-wrapper .header .mobile-menu::after {
+          content: '';
+          width: 24px;
+          height: 24px;
+          display: block;
+          position: absolute;
+          top: -50%;
+          bottom: -50%;
+          left: 8px;
+          background: url(/img/mobile_ver/menu.svg) no-repeat center;
+          margin: auto; }
+      .site-wrapper .header .logo {
+        margin-left: 0px;
+        float: left !important;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        width: calc(100% - 256px);
+        height: 46px !important; }
+        .site-wrapper .header .logo a {
+          display: block;
+          width: 66px;
+          height: 100%;
+          margin: auto;
+          padding-right: 4px; }
+          .site-wrapper .header .logo a img {
+            max-width: 100%;
+            max-height: 100%; }
+      .site-wrapper .header .wrapper-mobile-header {
+        width: 112px;
+        margin-right: 16px;
+        position: relative;
+        display: -webkit-box !important;
+        display: -webkit-flex !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        -webkit-box-align: center !important;
+        -webkit-align-items: center !important;
+        -ms-flex-align: center !important;
+        align-items: center !important; }
+      .site-wrapper .header .btn-wrapper-header {
+        position: static;
+        float: right;
+        display: block;
+        height: 32px;
+        margin-right: 0; }
+        .site-wrapper .header .btn-wrapper-header a.chat-btn-header {
+          padding: 7px 10px 7px 36px;
+          height: 32px;
+          font-size: 14px;
+          line-height: 16px;
+          width: 112px; }
+      .site-wrapper .header .language-site {
+        display: none !important; }
+    .site-wrapper #user-panel {
+      height: 46px;
+      max-width: 100%; }
+      .site-wrapper #user-panel .inner-wrapper {
+        width: 100%;
+        height: 46px;
+        max-width: 100%; }
+        .site-wrapper #user-panel .inner-wrapper .inner {
+          width: 100%;
+          margin-left: 0px; }
+          .site-wrapper #user-panel .inner-wrapper .inner:after, .site-wrapper #user-panel .inner-wrapper .inner:before {
+            display: none; }
+    .site-wrapper .footer {
+      width: 100%; }
+    .site-wrapper .profile-block {
+      margin: -20px -5px -20px -12px;
+      padding-left: 16px;
+      padding-right: 16px;
+      background: rgba(230, 230, 230, 0.5); }
+      .site-wrapper .profile-block .actions-button {
+        display: none !important; }
+      .site-wrapper .profile-block .credits-bl:not(.mobile) {
+        display: none !important; }
+      .site-wrapper .profile-block .abnner-wrapper-horizontal {
+        display: none; }
+      .site-wrapper .profile-block h2 {
+        margin-bottom: 5px; }
+      .site-wrapper .profile-block h2.mobile-profile-style,
+      .site-wrapper .profile-block h3.line {
+        padding: 3px 0 3px 20px;
+        border-left: 16px solid #00ae99;
+        position: relative;
+        left: -16px;
+        color: #00ae99;
+        margin-right: -32px;
+        background: #fff;
+        height: 54px;
+        line-height: 52px;
+        font-size: 24px;
+        margin-bottom: 16px; }
+      .site-wrapper .profile-block .photo-place {
+        float: left;
+        width: 105px;
+        margin-right: 16px;
+        overflow: hidden; }
+        .site-wrapper .profile-block .photo-place .photo:not(.special-photo) {
+          height: 100%;
+          box-shadow: none !important;
+          border: none !important;
+          background: white;
+          border-radius: 2px !important;
+          padding: 1px; }
+          .site-wrapper .profile-block .photo-place .photo:not(.special-photo) img {
+            max-width: 100%;
+            border-radius: 0px !important; }
+      .site-wrapper .profile-block .info-text {
+        margin: 0 3px 0 258px;
+        margin: auto;
+        display: inline-block;
+        float: left;
+        width: calc(100% - 145px); }
+        .site-wrapper .profile-block .info-text h2 span,
+        .site-wrapper .profile-block .info-text h2 .id-for-title {
+          display: none; }
+        .site-wrapper .profile-block .info-text .id-for-title.mobile {
+          color: #fff;
+          background: #014591;
+          display: inline-block;
+          padding: 6px 16px;
+          font-size: 18px;
+          font-weight: bold;
+          margin-bottom: 12px;
+          word-spacing: 1.5px; }
+        .site-wrapper .profile-block .info-text .info li.year, .site-wrapper .profile-block .info-text .info li.city {
+          display: none !important; }
+        .site-wrapper .profile-block .info-text .recive {
+          padding-left: 25px;
+          display: inline-block; }
+          .site-wrapper .profile-block .info-text .recive .icheckbox_flat-grey {
+            margin-left: -23px;
+            left: -2px; }
+      .site-wrapper .profile-block .actions-button-mobile {
+        margin-top: 16px; }
+        .site-wrapper .profile-block .actions-button-mobile .mobile-profile-btn {
+          display: inline-block;
+          background: url(/img/mobile_ver/mobile_profile_btn.png?1519220965) no-repeat;
+          width: 96px;
+          padding-top: 52px;
+          text-align: center;
+          font-weight: bold;
+          font-size: 14px;
+          text-decoration: none;
+          color: #00AF9B; }
+          .site-wrapper .profile-block .actions-button-mobile .mobile-profile-btn.edit-icon {
+            background-position: left top; }
+          .site-wrapper .profile-block .actions-button-mobile .mobile-profile-btn.photo-icon {
+            background-position: -82px top; }
+          .site-wrapper .profile-block .actions-button-mobile .mobile-profile-btn.video-icon {
+            background-position: -168px top; }
+          .site-wrapper .profile-block .actions-button-mobile .mobile-profile-btn.messages-icon {
+            background-position: -251px top; }
+      .site-wrapper .profile-block .credits-bl.mobile {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 24px;
+        background: #E6E6E6;
+        border: 1px solid #d8d8d8;
+        text-align: center;
+        padding: 2px 16px 16px; }
+        .site-wrapper .profile-block .credits-bl.mobile a.striped-button {
+          margin: 0px !important;
+          width: 100%;
+          box-sizing: border-box;
+          height: 48px;
+          font-size: 24px;
+          line-height: 42px; }
+        .site-wrapper .profile-block .credits-bl.mobile .credits.item {
+          font-size: 18px;
+          font-weight: bold;
+          color: rgba(0, 0, 0, 0.7);
+          margin-bottom: 13px;
+          text-align: left; }
+          .site-wrapper .profile-block .credits-bl.mobile .credits.item span {
+            color: #E26A00;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 152px;
+            display: inline-block;
+            position: relative;
+            top: 6px;
+            font-size: 21px; }
+            .site-wrapper .profile-block .credits-bl.mobile .credits.item span > span {
+              font-size: 18px; }
+          .site-wrapper .profile-block .credits-bl.mobile .credits.item::before {
+            content: url(/img/mobile_ver/card_profile.png);
+            display: inline-block;
+            margin-right: 8px;
+            position: relative;
+            top: 2px; }
+      .site-wrapper .profile-block .view-short {
+        padding: 11px; }
+        .site-wrapper .profile-block .view-short .striped-button {
+          clear: both;
+          float: none;
+          display: inherit;
+          margin-top: 16px; }
+      .site-wrapper .profile-block .small-girls-list {
+        text-align: center;
+        margin: 0px -3px 29px !important;
+        width: calc(100% + 6px);
+        margin-top: -3px; }
+        .site-wrapper .profile-block .small-girls-list a {
+          max-width: 78px;
+          float: none;
+          display: inline-block;
+          margin: 3px 3px;
+          border-radius: 2px;
+          padding: 6px;
+          width: calc(33.3333% - 37px);
+          border: none;
+          background: white;
+          padding-bottom: 8px;
+          text-decoration: none;
+          font-size: 13px;
+          box-sizing: border-box; }
+          .site-wrapper .profile-block .small-girls-list a img {
+            max-width: 100%;
+            max-height: none;
+            border-radius: 0px;
+            height: auto !important; }
+          .site-wrapper .profile-block .small-girls-list a .sticker-user-btn.right {
+            right: 9px; }
+      .site-wrapper .profile-block .girls-list {
+        margin: 0px -8px;
+        width: calc(100% + 16px);
+        text-align: center;
+        box-sizing: border-box; }
+        .site-wrapper .profile-block .girls-list a {
+          max-width: 156px;
+          float: none;
+          display: inline-block;
+          margin: 8px !important;
+          display: inline-block;
+          border-radius: 2px;
+          border: none;
+          background: white;
+          box-sizing: border-box;
+          width: calc(50% - 18px); }
+          .site-wrapper .profile-block .girls-list a .photo-wrapper,
+          .site-wrapper .profile-block .girls-list a .photo {
+            width: 100%;
+            height: auto;
+            max-height: 194px; }
+          .site-wrapper .profile-block .girls-list a img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 0; }
+          .site-wrapper .profile-block .girls-list a .sticker-user-btn.right {
+            right: 5px; } }
+
+/*# sourceMappingURL=maps/mobile.css.map */

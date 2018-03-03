@@ -1,0 +1,206 @@
+@import 'top_panel';
+/* HEADER */
+.header {
+    width: 100%;
+    height: 64px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+	display: -webkit-box!important;
+	display: -webkit-flex!important;
+	display: -ms-flexbox!important;
+	display: flex!important;
+	-webkit-box-align: center!important;
+	-webkit-align-items: center!important;
+	-ms-flex-align: center!important;
+	align-items: center!important;
+	background: white;
+    z-index: 100;
+    @include box-shadow(0px 0px 12px 0px rgba(0,0,0,0.24));
+    @include transition(box-shadow 0.4s);
+
+	&.open-mobile {
+    	@include box-shadow(0px 0px 12px 0px rgba(0,0,0,0));
+		
+		.mobile-menu {
+			&::after {
+				background: url(/img/mobile_ver/clear.svg) no-repeat center;
+			}
+		}
+		& ~ .nav-menu.mobile {
+			top: 64px;
+			background: white;
+			left: 0;
+			right: 0;
+			margin: 0;
+			width: 100%;
+			z-index: 7;
+			border-top: 1px solid rgba(0,0,0,.06);
+			border-bottom: 1px solid rgba(0,0,0,.06);
+			box-shadow: 0 3px 5px 0 rgba(0,0,0,.24);
+		}
+	}
+
+	& ~ .nav-menu.mobile {
+		position: fixed;
+		display: block !important;
+		top: -260px;
+		padding-top: 18px;
+		@include transition(top 0.4s);
+		
+		ul {
+			padding-left: 26px;
+			list-style: none;
+			
+			li {
+				
+				&::before {
+					content: '';
+					width: 4px;
+					height: 4px;
+					@include border-radius(50%);
+					display: inline-block;
+					margin-right: 26px;
+					background: #1d69ba;
+					opacity: 0.24;
+				}
+				
+				a {
+					text-decoration: none;
+					font-weight: bold;
+					text-transform: uppercase;
+					font-size: 14px;
+					line-height: 32px;
+					
+					> span {
+						background: #21b7a2;
+						color: white;
+						padding: 3px 10px;
+						font-size: 12px;
+						position: relative;
+						line-height: 12px;
+						top: -2px;
+						margin-left: 8px;
+						border-radius: 24px;
+					}
+				}
+				
+				&.active {
+					&::before {
+						opacity: 1;
+					}
+
+					a {
+						color: #1d69ba;
+					}
+				}
+			}
+		}
+
+		.footer-mobile-menu {
+			color: rgba(0,0,0,.38);
+			font-size: 12px;
+			height: 42px;
+			margin-top: 18px;
+			border-top: 1px solid rgba(0,0,0,.06);
+		    font-weight: bold;
+		}
+	}
+
+	.nav-menu:not(.mobile) {
+		display: none !important;
+	}
+	
+	.mobile-menu {
+		display: -webkit-box!important;
+		display: -webkit-flex!important;
+		display: -ms-flexbox!important;
+		display: flex!important;
+	    width: 112px;
+	    height: 32px;
+	    position: relative;
+	    margin-left: 16px;
+	    margin-right: 6px;
+	    border: 1px solid #21b7a2;
+	    border-radius: 4px;
+	    color: #21b7a2;
+	    font-weight: bold;
+	    font-size: 14px;
+	    padding-left: 40px;
+	    box-sizing: border-box;
+		
+		&::after {
+			content: '';
+			width: 24px;
+			height: 24px;
+			display: block;
+			position: absolute;
+			top: -50%;
+			bottom: -50%;
+			left: 8px;
+			background: url(/img/mobile_ver/menu.svg) no-repeat center;
+			margin: auto;
+		}
+	}
+
+
+	.logo {
+		margin-left: 0px;
+		float: left !important;
+		margin-top: 0px;
+		margin-bottom: 0px;
+	    width: calc(100% - 256px);
+		height: 46px!important;
+		
+		a {
+			display: block;
+			width: 66px;
+			height: 100%;
+			margin: auto;
+			padding-right: 4px;
+			
+			img {
+				max-width: 100%;
+				max-height: 100%;
+			}
+		}
+	}
+
+	.wrapper-mobile-header {
+		width: 112px;
+		margin-right: 16px;
+		position: relative;
+		display: -webkit-box!important;
+		display: -webkit-flex!important;
+		display: -ms-flexbox!important;
+		display: flex!important;
+		-webkit-box-align: center!important;
+		-webkit-align-items: center!important;
+		-ms-flex-align: center!important;
+		align-items: center!important;
+	}
+
+	.btn-wrapper-header {
+		position: static;
+		float: right;
+		display: block;
+		height: 32px;
+	    margin-right: 0;
+	    
+	    a.chat-btn-header {
+		    padding: 7px 10px 7px 36px;
+		    height: 32px;
+		    font-size: 14px;
+	        line-height: 16px;
+		    width: 112px;
+		}
+	}
+
+	.language-site {
+		display: none !important;
+		
+		.lng-btn {
+		}
+	}
+}

@@ -1,0 +1,15 @@
+.site-wrapper {
+    margin-bottom: 49px;
+    width: 1024px;
+    background-color: #fff;
+    margin: 0 auto;
+    -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, .25);
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, .25);
+}
+.payPage * {
+    box-sizing: border-box;
+}
+
+.payPage_padded {
+    padding: 0 12px 20px;
+}

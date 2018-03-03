@@ -1,0 +1,264 @@
+.profile-block {
+	margin: -20px -5px -20px -12px;
+	padding-left: 16px;
+	padding-right: 16px;
+	background: rgba(230,230,230,.5);
+	
+	.actions-button {
+		display: none !important;
+	}
+
+	.credits-bl:not(.mobile) {
+		display: none !important;
+	}
+
+	.abnner-wrapper-horizontal {
+		display: none;
+	}
+
+	h2 {
+	    margin-bottom: 5px;
+	}
+
+	h2.mobile-profile-style,
+	h3.line {
+		padding: 3px 0 3px 20px;
+		border-left: 16px solid #00ae99;
+		position: relative;
+		left: -16px;
+		color: #00ae99;
+		margin-right: -32px;
+		background: #fff;
+		height: 54px;
+		line-height: 52px;
+		font-size: 24px;
+		margin-bottom: 16px;
+	}
+	
+	.photo-place {
+	    float: left;
+	    width: 105px;
+	    margin-right: 16px;
+	    overflow: hidden;
+		
+		.photo:not(.special-photo) {
+			height: 100%;
+		    box-shadow: none !important;
+		    border: none !important;
+		    background: white;
+		    border-radius: 2px !important;
+		    padding: 1px;
+		    
+		    img {
+		    	max-width: 100%;
+	    	    border-radius: 0px !important;
+		    }
+		}
+	}
+
+	.info-text {
+	    margin: 0 3px 0 258px;
+	    margin: auto;
+	    display: inline-block;
+	    float: left;
+	    width: calc(100% - 145px);
+	    
+	    h2 {
+	    	span,
+	    	.id-for-title {
+	    		display: none;
+	    	}
+	    }
+
+	    .id-for-title.mobile {
+			color: #fff;
+			background: #014591;
+			display: inline-block;
+			padding: 6px 16px;
+			font-size: 18px;
+			font-weight: bold;
+			margin-bottom: 12px;
+			word-spacing: 1.5px;
+	    }
+
+	    .info li {
+	    	&.year,
+	    	&.city {
+	    		display: none !important;
+	    	}
+	    }
+
+	    .recive {
+			padding-left: 25px;
+			display: inline-block;
+			
+			.icheckbox_flat-grey {
+				margin-left: -23px;
+				left: -2px;
+			}
+	    }
+	}
+
+	.actions-button-mobile {
+		margin-top: 16px;
+
+		.mobile-profile-btn {
+			display: inline-block;
+			background: url(/img/mobile_ver/mobile_profile_btn.png?1519220965) no-repeat;
+			width: 96px;
+			padding-top: 52px;
+			text-align: center;
+			font-weight: bold;
+			font-size: 14px;
+			text-decoration: none;
+			color: #00AF9B;
+			
+			&.edit-icon {
+				background-position: left top;
+			}
+			&.photo-icon {
+				background-position: -82px top;
+			}
+			&.video-icon {
+				background-position: -168px top;
+			}
+			&.messages-icon {
+				background-position: -251px top;
+			}
+		}
+	}
+
+	.credits-bl.mobile {
+		width: 100%;
+		box-sizing: border-box;
+		margin-top: 24px;
+		background: #E6E6E6;
+		border: 1px solid #d8d8d8;
+		text-align: center;
+        padding: 2px 16px 16px;
+	    
+	    a.striped-button {
+			margin: 0px !important;
+			width: 100%;
+			box-sizing: border-box;
+			height: 48px;
+			font-size: 24px;
+			line-height: 42px;
+	    }
+
+	    .credits.item {
+		    font-size: 18px;
+		    font-weight: bold;
+		    color: rgba(0,0,0,.7);
+		    margin-bottom: 13px;
+		    text-align: left;
+		    
+		    span {
+				color: #E26A00;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				max-width: 152px;
+				display: inline-block;
+				position: relative;
+				top: 6px;
+				font-size: 21px;
+		    	
+		    	>span {
+		    		font-size: 18px;
+		    	}
+		    }
+
+		    &::before {
+		    	content: url(/img/mobile_ver/card_profile.png);
+		    	display: inline-block;
+		    	margin-right: 8px;
+				position: relative;
+				top: 2px;
+		    }
+		} 
+	}
+
+	.view-short {
+	    padding: 11px;
+	    
+	    .striped-button {
+			clear: both;
+			float: none;
+			display: inherit;
+			margin-top: 16px;
+	    }
+	}
+
+	.small-girls-list {
+		text-align: center;
+		margin: 0px -3px 29px !important;
+		width: calc(100% + 6px);
+	    margin-top: -3px;
+		
+		a {
+			max-width: 78px;
+			float: none;
+			display: inline-block;
+		    margin: 3px 3px;
+	        border-radius: 2px;
+	        padding: 6px;
+	        width: calc(33.3333% - 37px);
+	        border: none;
+	        background: white;
+			padding-bottom: 8px;
+			text-decoration: none;
+			font-size: 13px;
+		    box-sizing: border-box;
+	        
+	        img {
+				max-width: 100%;
+				max-height: none;
+				border-radius: 0px;
+				height: auto !important;
+	        }
+
+	        .sticker-user-btn.right {
+	        	right: 9px;
+	        }
+		}
+	}
+
+	.girls-list {
+		margin: 0px -8px;
+		width: calc(100% + 16px);
+		text-align: center;
+		box-sizing: border-box;
+
+		a {
+			max-width: 156px;
+			float: none;
+			display: inline-block;
+			margin: 8px !important;
+			display: inline-block;
+			border-radius: 2px;
+			border: none;
+			background: white;
+			box-sizing: border-box;
+			width: calc(50% - 18px);
+			
+			.photo-wrapper,
+			.photo {
+				width: 100%;
+				height: auto;
+				max-height: 194px;
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+				display: block;
+			    border-radius: 0;
+			}
+
+			.sticker-user-btn.right {
+				right: 5px;
+			}
+		}
+	}
+}

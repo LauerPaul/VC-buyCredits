@@ -1,0 +1,19 @@
+body {
+	background: none;
+	padding-top: 65px;
+
+    #top-panel {
+    	display: none !important;
+    }
+}
+
+.site-wrapper {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+    
+    .agency-page, 
+    .index-girls-list-wrapper {
+	    width: 100%;
+    }
+}

@@ -1,0 +1,122 @@
+.way-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    
+    @media (max-width: 800px) {
+		text-transform: uppercase;
+		font-size: 1rem;
+		margin-top: 12px;
+		
+		> span {
+			color: #21b7aa;
+		}
+    }
+
+}
+.way-block {
+	border: 1px solid $d_green;
+	padding: 15px;
+	padding-bottom: 10px;
+	@include border-radius(4px);
+	font-family: "PT Sans",sans-serif;
+	
+
+    @media (max-width: 800px) {
+		border: none;
+		padding: 10px 0px;
+		width: 188px;
+	}
+	
+	.iradio {
+		width: 16px!important;
+		height: 16px!important;
+		background: white;
+		@include border-radius(50%);
+		position: relative;
+		transition: all .2s linear;
+		margin-right: 3px;
+		border: 1px solid $d_green;
+		cursor: pointer;
+		display: inline-block;
+		float: left;
+		margin-right: 10px;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: -50%;
+			bottom: -50%;
+			right: -50%;
+			left: -50%;
+			margin: auto;
+			width: 10px;
+			height: 10px;
+			display: block;
+			transition: all .2s linear;
+			opacity: 0;
+			background: $d_green;
+			@include border-radius(50%);
+		}
+
+		&:hover:not(.checked){
+			&::before {
+				opacity: 0.4;
+			}
+		}
+		
+		&.checked {
+			&::before {
+				opacity: 1;
+			}
+		}
+	}
+	
+	label {
+		display: block;
+		font-weight: bold;
+		vertical-align: middle;
+		cursor: pointer;
+		font-size: 16px;
+		line-height: 14px;
+		margin-bottom: 8px;
+		color: #4d4d4d;
+		
+		&.new {
+			> span {
+				position: relative;
+				
+				&::after {
+					content: 'NEW';
+					width: 36px;
+					height: 16px;
+					text-align: center;
+					position: absolute;
+					left: calc(100% + 5px);
+					top: -50%;
+					bottom: -50%;
+					margin: auto;
+					background: $d_green;
+					@include border-radius(25px);
+					color: white;
+					text-transform: uppercase;
+					font-weight: 600;
+				    font-family: 'Open Sans',sans-serif;
+					font-size: 10px;
+					line-height: 14px;
+				}
+			}
+		}
+	}
+
+	p {
+		color: #808080;
+		margin-left: 27px;
+		margin-bottom: 7px;
+		line-height: 14px;
+		font-size: 12px;
+	}
+
+	.buyNow {
+		margin-top: 0;
+	}
+}

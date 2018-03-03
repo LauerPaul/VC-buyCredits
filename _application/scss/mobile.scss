@@ -1,0 +1,35 @@
+/* ---------------------------------------
+Copyright 2018©VictoriyaClub.com
+front-end dev. Pavel Ugrynovych (Lauer)
+mobile vers. site
+---------------------------------------*/
+@import "include/_variables";
+@import "include/_mixin";
+
+@media (min-width: 801px) {
+	.actions-button-mobile {
+		display: none !important;
+	}
+	.id-for-title {
+		&.mobile {
+			display: none !important;
+		}
+	}
+	.credits-bl {
+		&.mobile {
+			display: none !important;
+		}
+	}
+}
+
+@media (max-width: 800px) {
+	@import "style/mobile/styles";
+
+	.site-wrapper {
+		@import "style/mobile/header";
+		@import "style/mobile/userpanel";
+		@import "style/mobile/footer";
+		@import "style/mobile/my_profile";
+	}
+
+}
